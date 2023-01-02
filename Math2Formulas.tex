@@ -23,24 +23,24 @@
 
 	\section{Physical Aspect}
 		\begin{equation}
-			m = \int_{C} \delta (x, y) \, \mathrm{d}s
+			m = \int\limits_C \delta (x, y) \, \mathrm{d}s
 		\end{equation}
 		
 		\begin{equation}
 			(\bar{x}, \bar{y}) = 
 			\begin{cases}
-					\bar{x} = \frac{1}{m} \int_{C} x \, \delta(x, y) \, \, \mathrm{d}s \\
-					\bar{y} = \frac{1}{m} \int_{C} y \, \delta(x, y) \, \, \mathrm{d}s
+					\bar{x} = \frac{1}{m} \int\limits_C x \, \delta(x, y) \, \, \mathrm{d}s \\
+					\bar{y} = \frac{1}{m} \int\limits_C y \, \delta(x, y) \, \, \mathrm{d}s
 			\end{cases}
 		\end{equation}
 	
 	\section{Vector Field}
 		\begin{equation}
-			\int_{C} F \cdot \mathrm{d}r = \int_{a}^{b} F\big(\vec{r}(t)\big) \cdot r'(t) \, \mathrm{d}t
+			\int\limits_C F \cdot \mathrm{d}r = \int_{a}^{b} F\big(\vec{r}(t)\big) \cdot r'(t) \, \mathrm{d}t
 		\end{equation}
 		
 		\begin{equation}
-			\int_{C} F \cdot \mathrm{d}r = \int_{C} \mathtt{p} \, \mathrm{d}x + \mathtt{q} \, \mathrm{d}y + \mathtt{r} \, \mathrm{d}z
+			\int\limits_C F \cdot \mathrm{d}r = \int\limits_C \mathtt{p} \, \mathrm{d}x + \mathtt{q} \, \mathrm{d}y + \mathtt{r} \, \mathrm{d}z
 		\end{equation}    
 
 \chapter{PDF 14}\label{pdf14}
@@ -55,7 +55,7 @@
 		\end{equation} 
 		
 		\begin{equation}
-			\int_{C} F \cdot \mathrm{d}r = \int_{a}^{b} \nabla f \cdot \mathrm{d}r = f\big(\vec{r}(b)\big) - f\big(\vec{r}(a)\big)
+			\int\limits_C F \cdot \mathrm{d}r = \int_{a}^{b} \nabla f \cdot \mathrm{d}r = f\big(\vec{r}(b)\big) - f\big(\vec{r}(a)\big)
 		\end{equation}     
 		
 		\begin{equation}
@@ -65,15 +65,20 @@
 		\end{equation}
 		
 		\section{Green Theorem}
-		\begin{equation}
-			\int_{C} P \, \mathrm{d}x + Q \, \mathrm{d}y = \iint_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}A
-		\end{equation}
+			\begin{equation}
+				\int\limits_C P \, \mathrm{d}x + Q \, \mathrm{d}y = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}A
+			\end{equation}
 		
 		\section{Area Calculations}
-		\begin{equation}
-			A = \int_{C} x \, \mathrm{d}y = - \int_{C} y \, \mathrm{d}x = \frac{1}{2} \int_{C} x \, \mathrm{d}y - y \, \mathrm{d}x
-		\end{equation}
+			\begin{equation}
+				A = \int\limits_C x \, \mathrm{d}y = - \int\limits_C y \, \mathrm{d}x = \frac{1}{2} \int\limits_C x \, \mathrm{d}y - y \, \mathrm{d}x
+			\end{equation}
 
+		\section{Green Theorem 2}
+			\begin{equation}
+				\int\limits_C p \, \mathrm{d}x + q \, \mathrm{d}y = \int\limits_{C_{1}} p \, \mathrm{d}x + q \, \mathrm{d}y + \int\limits_{C_{2}} p \, \mathrm{d}x + q \, \mathrm{d}y = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}A
+			\end{equation}
+		
 \chapter{PDF 15}\label{pdf15}
 \chapter{PDF 16}\label{pdf16}
 \end{document}
