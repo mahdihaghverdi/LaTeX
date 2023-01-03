@@ -43,6 +43,14 @@
 			\int\limits_C F \cdot \mathrm{d}r = \int\limits_C \mathtt{p} \, \mathrm{d}x + \mathtt{q} \, \mathrm{d}y + \mathtt{r} \, \mathrm{d}z
 		\end{equation}    
 
+
+
+
+
+
+
+
+
 \chapter{PDF 14}\label{pdf14}
     \section{Gradient Vector}
 		\begin{equation}
@@ -80,5 +88,74 @@
 			\end{equation}
 		
 \chapter{PDF 15}\label{pdf15}
+	\section{Smooth Parametrized Curve}
+		\begin{equation}
+			\vec{r}(u, v) = \big(x(u, v), \, y(u, v), \, z(u, v)\big), \quad (u, v) \in R
+		\end{equation}
+		
+		\begin{equation}
+			\vec{r}_u = (\frac{\partial x}{\partial u}, \, \frac{\partial y}{\partial u}, \, \frac{\partial z}{\partial u}) \qquad \vec{r}_v = (\frac{\partial x}{\partial v}, \, \frac{\partial y}{\partial v}, \, \frac{\partial z}{\partial v}) 
+		\end{equation}	
+		\subsection{Sample}
+			Let $z = f(x, y)$, the smooth parametrized curve will be:
+				\begin{equation}
+					\vec{r}(u, v) = (u, v, f(u, v))
+				\end{equation}
+		 	Partial Derivatives will be:
+			 	\begin{equation}
+				 	\begin{split}
+				 		\vec{r}_u 
+				 		& = (
+				 			\frac{\partial u}{\partial u}, \,
+				 			\frac{\partial v}{\partial u}, \,
+				 			\frac{\partial f(u, v)}{\partial u}
+				 		) \\
+				 		& = (1, 0, \frac{\partial f}{\partial u})
+			              = \vec{i} + \frac{\partial f}{\partial u} \vec{k}
+				 	\end{split}
+			 	\end{equation}
+		 	
+			 	\begin{equation}
+				 	\begin{split}
+						\vec{r}_v 
+						& = (
+								\frac{\partial u}{\partial v}, \,
+								\frac{\partial v}{\partial v}, \,
+								\frac{\partial f(u, v)}{\partial v}
+							) \\
+						& = (0, 1, \frac{\partial f}{\partial v})
+						  = \vec{j} + \frac{\partial f}{\partial v} \vec{k}
+					\end{split}
+				\end{equation}
+	 	    Cross Product of the partial derivatives:
+	 	    \begin{equation}
+				\begin{split}
+					\vec{r}_u \times \vec{r}_v 
+					& = (
+						- \frac{\partial f}{\partial u}, \, 
+						- \frac{\partial f}{\partial v}, \, 
+						1
+					) \\
+					& = - \frac{\partial f}{\partial u} \vec{i} + 
+					    - \frac{\partial f}{\partial v} \vec{j} + 
+					    \vec{k} \neq 0
+				\end{split}
+			\end{equation}
+	\section{Area}
+		\begin{equation}
+			A(\mathtt{S}) = \iint\limits_R \left|\vec{r}_u \times \vec{r}_v\right| \, \mathrm{d}A
+		\end{equation}
+		\subsection{Theorem}
+			Let $z = f(x, y)$, then:
+			\begin{equation}
+				A(\mathtt{S}) = 
+				  \iint\limits_R 
+				  \sqrt{
+				  	(\frac{\partial f}{\partial x})^2 + 
+				  	(\frac{\partial f}{\partial y})^2 + 
+				  	1
+			  	} 
+				  \ \ \mathrm{d}A
+			\end{equation}
 \chapter{PDF 16}\label{pdf16}
 \end{document}
