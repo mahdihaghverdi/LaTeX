@@ -157,5 +157,94 @@
 			  	} 
 				  \ \ \mathrm{d}A
 			\end{equation}
+	\section{Vector Integral}
+		\begin{equation}
+			\iint\limits_S G(x, y, z) \, \mathrm{d}\sigma 
+			  = \iint\limits_R G\big(\vec{r}(u, v)\big) 
+			    \left|\vec{r}_u \times \vec{r}_v\right| 
+			    \, \mathrm{d}A 
+			    \quad \vec{r}(u, v) \in R
+		\end{equation}
+		\subsection{special cases}
+			\subsubsection{1}
+				Let $S: \vec{r}(u, v) = \big(f(u, v), g(u, v), h(u, v)\big)$, then:
+			 	\begin{equation}
+			 		\iint\limits_S G(x, y, z) \, \mathrm{d}\sigma
+			 		  = \iint\limits_S G\big(f(u, v), g(u, v), h(u, v)\big) 
+			 		    \left|\vec{r}_u \times \vec{r}_v\right| 
+			 		    \, \mathrm{d}A
+			 	\end{equation}
+		 	\subsubsection{2}
+		 		Let $z = f(x, y)$, then:
+		 		\begin{equation}
+		 			\iint\limits_S G(x, y, z) \, \mathrm{d}\sigma
+		 			  = \iint\limits_S G\big(x, y, f(x, y)\big)
+		 			  \sqrt{
+		 			  	(\frac{\partial f}{\partial x})^2 + 
+		 			  	(\frac{\partial f}{\partial y})^2 + 
+		 			  	1
+	 			  	  } 
+ 			  	       \ \mathrm{d}x \mathrm{d}y
+		 		\end{equation}
+	 		\subsubsection{Solved Exercise (use as a template)}
+	 			Let $z = \sqrt{x^2 + y^2} \ \, ; \ (0 \le z \le 1)$, then $\iint\limits_S x^2 \, \mathrm{d}\sigma = ?$
+	 			
+	 			Solution:
+	 			\begin{equation*}
+	 				\begin{cases}
+	 					x = r\cos\theta & \\
+	 					y = r\sin\theta & \\
+	 					z = z
+	 				\end{cases}
+ 				    \Rightarrow
+ 				    \begin{cases}
+	 					x = r\cos\theta & \\
+						y = r\sin\theta & \\
+						z= r
+ 				    \end{cases}
+ 			    	\, (0 \le r \le 1) \, ; (0 \le \theta \le 2\pi) 			    	
+	 			\end{equation*}
+ 				\begin{equation*}
+ 					\Rightarrow
+ 					\begin{split}
+ 						\vec{r}\,(r, \theta) 
+ 						               & = (r\cos\theta, r\sin\theta, r) \\
+ 						\vec{r}_r      & = (\cos\theta, \sin\theta, r) \\
+ 						\vec{r}_\theta & = (-r\sin\theta, r\cos\theta, 0) \\
+ 					\end{split}
+ 				\end{equation*}
+ 				\begin{equation*}
+ 					\Rightarrow
+ 					\vec{r}_r \times \vec{r}_\theta = 
+ 					\begin{vmatrix}
+ 						i            & j             & k \\
+ 						\cos\theta   & \sin\theta    & r \\
+ 						-r\sin\theta & r\cos\theta & 0
+ 					\end{vmatrix} = (-r\cos\theta, -r\sin\theta, r)
+ 				\end{equation*}
+ 				\begin{equation*}
+ 					\Rightarrow
+					\left|\vec{r}_r \times \vec{r}_\theta\right|
+         			 = \sqrt{
+         			 	\underbrace{
+             			 	(r^2\cos^2\theta) +
+            			 	(r^2\sin^2\theta)
+         		 	    }_{=r^2}
+         	 	        + r^2
+					 }
+					 = \sqrt{2r^2}
+					 = r\sqrt{2} 				
+ 				\end{equation*}
+ 				\begin{equation*}
+ 					\begin{split}
+	 					\Rightarrow \iint\limits_{[0, 1] \times [0, 2\pi]}
+ 						r^2\cos^2\theta \ r\sqrt{2} \ \mathrm{d}r \mathrm{d}\theta
+ 						 & = \sqrt{2} \int_{0}^{2\pi} \int_{0}^{1} r^3\cos^2\theta \ \mathrm{d}r \mathrm{d}\theta \\
+ 						 & = \frac{\sqrt{2}}{4} \int_{0}^{2\pi} \cos^2\theta \ \mathrm{d}\theta \\
+ 						 & = \frac{\sqrt{2}}{2 \times 4} \int_{0}^{2\pi} 1 + \cos2\theta \ \mathrm{d}\theta \\
+ 						 & = \frac{\sqrt{2}}{8} \left.\big(\theta + \frac{1}{2}\sin2\theta\big)\right|_0^{2\pi} \\
+ 						 & = \frac{2\pi \times \sqrt{2}}{8} = \frac{\pi\sqrt{2}}{4}
+ 					\end{split}
+ 				\end{equation*}
 \chapter{PDF 16}\label{pdf16}
 \end{document}
