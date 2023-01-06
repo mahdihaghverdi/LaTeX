@@ -1,6 +1,8 @@
 \documentclass[12pt, fleqn]{book}
 
 \usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{mathtools}
+\usepackage{physics}
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -247,4 +249,120 @@
  					\end{split}
  				\end{equation*}
 \chapter{PDF 16}\label{pdf16}
+	\section{Transforms}
+		\subsubsection{Del (nabla)}
+			Symbol:
+			\begin{equation}
+				\nabla
+			\end{equation}
+			Definition:
+			\begin{equation}
+				\nabla f \coloneqq \frac{\partial f}{\partial x}\vec{i} + \frac{\partial f}{\partial y}\vec{j} + \frac{\partial f}{\partial z}\vec{k}
+			\end{equation}
+		    \begin{equation}
+		    	\nabla \coloneqq \frac{\partial}{\partial x}\vec{i} + \frac{\partial}{\partial y}\vec{j} + \frac{\partial}{\partial z}\vec{k}
+		    \end{equation}
+	    \subsubsection{Divergence}
+	    	Symbol:
+	    	\begin{equation}
+	    		\mathrm{div}
+	    	\end{equation}
+    		Definition: \\
+    		Let $\mathbf{F}$ be $\mathbf{F}(x, y, z) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k}$, then:
+    		\begin{equation}
+    			\mathrm{div} \; \mathbf{F} \coloneqq \frac{\partial P}{\partial x}\vec{i} + \frac{\partial Q}{\partial y}\vec{j} + \frac{\partial R}{\partial z}\vec{k}
+    		\end{equation}
+    		\begin{equation}
+    			\mathrm{div} \; \mathbf{F} \coloneqq \nabla \cdot \mathbf{F}
+    		\end{equation}
+    	\subsubsection{curl}
+    		Symbol:
+    		\begin{equation}
+    			\mathrm{curl}
+    		\end{equation}
+    		Definition: \\
+    		Let $\mathbf{F}$ be $\mathbf{F}(x, y, z) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k}$, then:
+    		\begin{equation}
+    			\mathrm{curl} \; \mathbf{F} \coloneqq (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z})\vec{i} + (\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x})\vec{j} + (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\vec{k} 
+     		\end{equation}
+     		\begin{equation}
+     			\mathrm{curl} \; \mathbf{F} \coloneqq \nabla \cdot \mathbf{F} = 
+     			\begin{vmatrix}
+     				\vec{i} & \vec{j} & \vec{k} \\
+     				\frac{\partial}{\partial x} &  \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+     				P & Q & R
+     			\end{vmatrix}
+     		\end{equation}
+     	\section{Theorems}
+     		\begin{enumerate}
+     			\item $\mathrm{curl}(\nabla f) = 0$
+     			\item $\mathrm{div}(\mathrm{curl} \, \mathbf{F}) = 0$
+                \item \begin{enumerate}
+     					\item Let $\lambda \in \mathbb{R}$, then: $\nabla(f + \lambda g) = \nabla f + \lambda \nabla g$
+		     			\item $\mathrm{curl} \, (\mathbf{F} + \lambda \mathbf{G}) = \mathrm{curl} \, \mathbf{F} + \lambda\mathrm{curl} \, \mathbf{G}$
+		     			\item $\mathrm{div} \, (\mathbf{F} + \lambda \mathbf{G}) = \mathrm{div} \, \mathbf{F} + \lambda\mathrm{div} \, \mathbf{G}$
+     			\end{enumerate}
+     			\item $\mathrm{div} \, (\mathbf{F} \times \mathbf{G}) = \mathbf{G} \cdot \mathrm{curl} \, \mathbf{F} - \mathbf{F} \cdot \mathrm{curl} \, \mathbf{G}$
+     			\item $\mathrm{div} \, (f \mathbf{F}) = f \, \mathrm{div} \, \mathbf{F} + \mathbf{F} \cdot \nabla f$
+     			\item $\mathrm{curl} \, (f \mathbf{F}) = f \, \mathrm{curl} \, \mathbf{F} + \nabla f \times \mathbf{F}$
+     		\end{enumerate}
+     	\section{Surface Integrals of Vector Fields}
+     		\begin{equation}
+     			\iint\limits_S \mathbf{F} \cdot \vec{n} \ \mathrm{d}\sigma
+     		\end{equation}
+     		\begin{equation*}
+     			\begin{split}
+     				\iint\limits_S \mathbf{F} \cdot \vec{n} \ \mathrm{d}\sigma
+     				&  = \iint\limits_S \mathbf{F} \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\vec{r}_u \times \vec{r}_v\right|} \ \mathrm{d}\sigma \\
+     				& = \iint\limits_D \left[\mathbf{F} \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\vec{r}_u \times \vec{r}_v\right|}\right] \left|\vec{r}_u \times \vec{r}_v\right| \ \mathrm{d}A \\
+     				& = \iint\limits_D \mathbf{F} \cdot \left(\vec{r}_u \times \vec{r}_v\right) \ \mathrm{d}A
+     			\end{split}
+     		\end{equation*}
+     	    \begin{equation}
+     	    	\Rightarrow 
+     	    	\iint\limits_S \mathbf{F} \cdot \vec{n} \ \mathrm{d}\sigma = \iint\limits_D \mathbf{F} \cdot \left(\vec{r}_u \times \vec{r}_v\right) \ \mathrm{d}A
+     	    \end{equation}
+     		Let $z = g(x, y); \, (x, y) \in R$ and $\mathbf{F} = (P, Q, R)$, then:
+     		\begin{equation}
+     			\iint\limits_S \mathbf{F} \cdot \vec{n} \ \mathrm{d}\sigma = 
+     			\iint\limits_R \left(-P \frac{\partial g}{\partial x} - Q\frac{\partial g}{\partial y} + R\right) \ \mathrm{d}A
+     		\end{equation}
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
+     	
 \end{document}
