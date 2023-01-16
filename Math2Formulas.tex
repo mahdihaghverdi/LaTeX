@@ -10,39 +10,40 @@
 	linkcolor=blue,
 }
 
+\newcommand{\D}{\mathrm{d}}
+
 \title{PDF 13 to 16 Integral Formulas}
 \author{Mahdi Haghverdi}
 
 \begin{document}
 	\maketitle
 	\tableofcontents
-	
 \chapter{PDF 13}\label{pdf13}
 	\section{Line Integral}
 	\begin{equation}
-		\int\limits_C f \, \mathrm{d}s = \int_{a}^{b} f\big(\vec{r}(t)\big) \, \lvert r'(t) \lvert \, \mathrm{d}t
+		\int\limits_C f \, \D s = \int_{a}^{b} f\big(\vec{r}(t)\big) \, \lvert r'(t) \lvert \, \D t
 	\end{equation}		
 
 	\section{Physical Aspect}
 		\begin{equation}
-			m = \int\limits_C \delta (x, y) \, \mathrm{d}s
+			m = \int\limits_C \delta (x, y) \, \D s
 		\end{equation}
 		
 		\begin{equation}
 			(\bar{x}, \bar{y}) = 
 			\begin{cases}
-					\bar{x} = \frac{1}{m} \int\limits_C x \, \delta(x, y) \, \, \mathrm{d}s \\
-					\bar{y} = \frac{1}{m} \int\limits_C y \, \delta(x, y) \, \, \mathrm{d}s
+					\bar{x} = \frac{1}{m} \int\limits_C x \, \delta(x, y) \, \, \D s \\
+					\bar{y} = \frac{1}{m} \int\limits_C y \, \delta(x, y) \, \, \D s
 			\end{cases}
 		\end{equation}
 	
 	\section{Vector Field}
 		\begin{equation}
-			\int\limits_C F \cdot \mathrm{d}r = \int_{a}^{b} F\big(\vec{r}(t)\big) \cdot r'(t) \, \mathrm{d}t
+			\int\limits_C F \cdot \D r = \int_{a}^{b} F\big(\vec{r}(t)\big) \cdot r'(t) \, \D t
 		\end{equation}
 		
 		\begin{equation}
-			\int\limits_C F \cdot \mathrm{d}r = \int\limits_C \mathtt{p} \, \mathrm{d}x + \mathtt{q} \, \mathrm{d}y + \mathtt{r} \, \mathrm{d}z
+			\int\limits_C F \cdot \D r = \int\limits_C \mathtt{p} \, \D x + \mathtt{q} \, \D y + \mathtt{r} \, \D z
 		\end{equation}    
 
 
@@ -65,7 +66,7 @@
 		\end{equation} 
 		
 		\begin{equation}
-			\int\limits_C F \cdot \mathrm{d}r = \int_{a}^{b} \nabla f \cdot \mathrm{d}r = f\big(\vec{r}(b)\big) - f\big(\vec{r}(a)\big)
+			\int\limits_C F \cdot \D r = \int_{a}^{b} \nabla f \cdot \D r = f\big(\vec{r}(b)\big) - f\big(\vec{r}(a)\big)
 		\end{equation}     
 		
 		\begin{equation}
@@ -76,17 +77,17 @@
 		
 		\section{Green Theorem}
 			\begin{equation}
-				\int\limits_C P \, \mathrm{d}x + Q \, \mathrm{d}y = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}A
+				\int\limits_C P \, \D x + Q \, \D y = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \D A
 			\end{equation}
 		
 		\section{Area Calculations}
 			\begin{equation}
-				A = \int\limits_C x \, \mathrm{d}y = - \int\limits_C y \, \mathrm{d}x = \frac{1}{2} \int\limits_C x \, \mathrm{d}y - y \, \mathrm{d}x
+				A = \int\limits_C x \, \D y = - \int\limits_C y \, \D x = \frac{1}{2} \int\limits_C x \, \D y - y \, \D x
 			\end{equation}
 
 		\section{Green Theorem 2}
 			\begin{equation}
-				\int\limits_C p \, \mathrm{d}x + q \, \mathrm{d}y = \int\limits_{C_{1}} p \, \mathrm{d}x + q \, \mathrm{d}y + \int\limits_{C_{2}} p \, \mathrm{d}x + q \, \mathrm{d}y = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \mathrm{d}A
+				\int\limits_C p \, \D x + q \, \D y = \int\limits_{C_{1}} p \, \D x + q \, \D y + \int\limits_{C_{2}} p \, \D x + q \, \D y = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \D A
 			\end{equation}
 		
 \chapter{PDF 15}\label{pdf15}
@@ -145,7 +146,7 @@
 			\end{equation}
 	\section{Area}
 		\begin{equation}
-			A(\mathtt{S}) = \iint\limits_R \left|\vec{r}_u \times \vec{r}_v\right| \, \mathrm{d}A
+			A(\mathtt{S}) = \iint\limits_R \left|\vec{r}_u \times \vec{r}_v\right| \, \D A
 		\end{equation}
 		\subsection{Theorem}
 			Let $z = f(x, y)$, then:
@@ -157,39 +158,39 @@
 				  	(\frac{\partial f}{\partial y})^2 + 
 				  	1
 			  	} 
-				  \ \ \mathrm{d}A
+				  \ \ \D A
 			\end{equation}
 	\section{Vector Integral}
 		\begin{equation}
-			\iint\limits_S G(x, y, z) \, \mathrm{d}\sigma 
+			\iint\limits_S G(x, y, z) \, \D \sigma 
 			  = \iint\limits_R G\big(\vec{r}(u, v)\big) 
 			    \left|\vec{r}_u \times \vec{r}_v\right| 
-			    \, \mathrm{d}A 
+			    \, \D A 
 			    \quad \vec{r}(u, v) \in R
 		\end{equation}
 		\subsection{special cases}
 			\subsubsection{1}
 				Let $S: \vec{r}(u, v) = \big(f(u, v), g(u, v), h(u, v)\big)$, then:
 			 	\begin{equation}
-			 		\iint\limits_S G(x, y, z) \, \mathrm{d}\sigma
+			 		\iint\limits_S G(x, y, z) \, \D \sigma
 			 		  = \iint\limits_S G\big(f(u, v), g(u, v), h(u, v)\big) 
 			 		    \left|\vec{r}_u \times \vec{r}_v\right| 
-			 		    \, \mathrm{d}A
+			 		    \, \D A
 			 	\end{equation}
 		 	\subsubsection{2}
 		 		Let $z = f(x, y)$, then:
 		 		\begin{equation}
-		 			\iint\limits_S G(x, y, z) \, \mathrm{d}\sigma
+		 			\iint\limits_S G(x, y, z) \, \D \sigma
 		 			  = \iint\limits_S G\big(x, y, f(x, y)\big)
 		 			  \sqrt{
 		 			  	(\frac{\partial f}{\partial x})^2 + 
 		 			  	(\frac{\partial f}{\partial y})^2 + 
 		 			  	1
 	 			  	  } 
- 			  	       \ \mathrm{d}x \mathrm{d}y
+ 			  	       \ \D x \D y
 		 		\end{equation}
 	 		\subsubsection{Solved Exercise (use as a template)}
-	 			Let $z = \sqrt{x^2 + y^2} \ \, ; \ (0 \le z \le 1)$, then $\iint\limits_S x^2 \, \mathrm{d}\sigma = ?$
+	 			Let $z = \sqrt{x^2 + y^2} \ \, ; \ (0 \le z \le 1)$, then $\iint\limits_S x^2 \, \D \sigma = ?$
 	 			
 	 			Solution:
 	 			\begin{equation*}
@@ -240,10 +241,10 @@
  				\begin{equation*}
  					\begin{split}
 	 					\Rightarrow \iint\limits_{[0, 1] \times [0, 2\pi]}
- 						r^2\cos^2\theta \ r\sqrt{2} \ \mathrm{d}r \mathrm{d}\theta
- 						 & = \sqrt{2} \int_{0}^{2\pi} \int_{0}^{1} r^3\cos^2\theta \ \mathrm{d}r \mathrm{d}\theta \\
- 						 & = \frac{\sqrt{2}}{4} \int_{0}^{2\pi} \cos^2\theta \ \mathrm{d}\theta \\
- 						 & = \frac{\sqrt{2}}{2 \times 4} \int_{0}^{2\pi} 1 + \cos2\theta \ \mathrm{d}\theta \\
+ 						r^2\cos^2\theta \ r\sqrt{2} \ \D r \D \theta
+ 						 & = \sqrt{2} \int_{0}^{2\pi} \int_{0}^{1} r^3\cos^2\theta \ \D r \D \theta \\
+ 						 & = \frac{\sqrt{2}}{4} \int_{0}^{2\pi} \cos^2\theta \ \D \theta \\
+ 						 & = \frac{\sqrt{2}}{2 \times 4} \int_{0}^{2\pi} 1 + \cos2\theta \ \D \theta \\
  						 & = \frac{\sqrt{2}}{8} \left.\big(\theta + \frac{1}{2}\sin2\theta\big)\right|_0^{2\pi} \\
  						 & = \frac{2\pi \times \sqrt{2}}{8} = \frac{\pi\sqrt{2}}{4}
  					\end{split}
@@ -308,24 +309,24 @@
      		\end{enumerate}
      	\section{Surface Integrals of Vector Fields}
      		\begin{equation}
-     			\iint\limits_S \mathbf{F} \cdot \vec{n} \ \mathrm{d}\sigma
+     			\iint\limits_S \mathbf{F} \cdot \vec{n} \ \D \sigma
      		\end{equation}
      		\begin{equation*}
      			\begin{split}
-     				\iint\limits_S \mathbf{F} \cdot \vec{n} \ \mathrm{d}\sigma
-     				&  = \iint\limits_S \mathbf{F} \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\vec{r}_u \times \vec{r}_v\right|} \ \mathrm{d}\sigma \\
-     				& = \iint\limits_D \left[\mathbf{F} \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\vec{r}_u \times \vec{r}_v\right|}\right] \left|\vec{r}_u \times \vec{r}_v\right| \ \mathrm{d}A \\
-     				& = \iint\limits_D \mathbf{F} \cdot \left(\vec{r}_u \times \vec{r}_v\right) \ \mathrm{d}A
+     				\iint\limits_S \mathbf{F} \cdot \vec{n} \ \D \sigma
+     				&  = \iint\limits_S \mathbf{F} \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\vec{r}_u \times \vec{r}_v\right|} \ \D \sigma \\
+     				& = \iint\limits_D \left[\mathbf{F} \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\vec{r}_u \times \vec{r}_v\right|}\right] \left|\vec{r}_u \times \vec{r}_v\right| \ \D A \\
+     				& = \iint\limits_D \mathbf{F} \cdot \left(\vec{r}_u \times \vec{r}_v\right) \ \D A
      			\end{split}
      		\end{equation*}
      	    \begin{equation}
      	    	\Rightarrow 
-     	    	\iint\limits_S \mathbf{F} \cdot \vec{n} \ \mathrm{d}\sigma = \iint\limits_D \mathbf{F} \cdot \left(\vec{r}_u \times \vec{r}_v\right) \ \mathrm{d}A
+     	    	\iint\limits_S \mathbf{F} \cdot \vec{n} \ \D \sigma = \iint\limits_D \mathbf{F} \cdot \left(\vec{r}_u \times \vec{r}_v\right) \ \D A
      	    \end{equation}
      		Let $z = g(x, y); \, (x, y) \in R$ and $\mathbf{F} = (P, Q, R)$, then:
      		\begin{equation}
-     			\iint\limits_S \mathbf{F} \cdot \vec{n} \ \mathrm{d}\sigma = 
-     			\iint\limits_R \left(-P \frac{\partial g}{\partial x} - Q\frac{\partial g}{\partial y} + R\right) \ \mathrm{d}A
+     			\iint\limits_S \mathbf{F} \cdot \vec{n} \ \D \sigma = 
+     			\iint\limits_R \left(-P \frac{\partial g}{\partial x} - Q\frac{\partial g}{\partial y} + R\right) \ \D A
      		\end{equation}
      	
      	
