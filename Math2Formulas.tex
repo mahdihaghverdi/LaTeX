@@ -98,7 +98,7 @@
 		\end{equation}
 		
 		\section{Green's Theorem}
-			Let $C$ be a positively oriented, piecewise smooth, simple closed curve in a plane, and let $D$ be the region bounded by $C$. If $P$ and $Q$ are functions of $\xy$ defined on an open region containing $D$ and have continuous partial derivatives there, then 
+			If $C$ be a positively oriented, piecewise smooth, simple closed curve in a plane, and let $D$ be the region bounded by $C$. If $P$ and $Q$ are functions of $\xy$ defined on an open region containing $D$ and have continuous partial derivatives there, then 
 			
 			\begin{equation}
 				\oic  P \, \D x + Q \, \D y = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
@@ -118,20 +118,20 @@
 				A = \oic  x \, \D y = - \oic  y \, \D x = \frac{1}{2} \oic  x \, \D y - y \, \D x
 			\end{equation}		
 \chapter{PDF 15}\label{pdf15}
-	\section{Piecewise Parametrized Smooth Curve}
+	\section{Piecewise Smooth Parametrized Curve}
 		\begin{equation}
 			\vec{r}\uv = \big(x\uv, \, y\uv, \, z\uv\big), \quad \uv \in R
 		\end{equation}
-		
+
 		\begin{equation}
 			\vec{r}_u = (\rond{x}{u}, \, \rond{y}{u}, \, \rond{z}{u}) \qquad \vec{r}_v = (\rond{x}{v}, \, \rond{y}{v}, \, \rond{z}{v}) 
 		\end{equation}	
 		\subsection{Sample}
-			Let $z = f\xy$, the smooth parametrized curve will be:
+			If $z = f\xy$, the smooth parametrized curve will be:
 				\begin{equation}
 					\vec{r}\uv = (u, v, f\uv)
 				\end{equation}
-		 	Partial Derivatives will be:
+		 	Partial Derivatives are defined as:
 			 	\begin{equation}
 				 	\begin{split}
 				 		\vec{r}_u 
@@ -171,12 +171,13 @@
 					    \vec{k} \neq 0
 				\end{split}
 			\end{equation}
-	\section{Area}
+		
+	\section{Area Calculation}
 		\begin{equation}
 			A(\mathtt{S}) = \iint\limits_R \left|\rutrv| \, \D A
 		\end{equation}
 		\subsection{Theorem}
-			Let $z = f\xy$, then:
+			If $z = f\xy$, then:
 			\begin{equation}
 				A(\mathtt{S}) = 
 				  \iint\limits_R 
@@ -189,35 +190,35 @@
 			\end{equation}
 	\section{Vector Integral}
 		\begin{equation}
-			\iis G\xyz \, \D \sigma 
-			  = \iint\limits_R G\big(\vec{r}\uv\big) 
+			\iis \G\xyz \, \D \sigma 
+			  = \iint\limits_R \G\big(\vec{r}\uv\big) 
 			    \left|\rutrv| 
 			    \, \D A 
 			    \quad \vec{r}\uv \in R
 		\end{equation}
 		\subsection{special cases}
-			\subsubsection{1}
-				Let $S: \vec{r}\uv = \big(f\uv, g\uv, h\uv\big)$, then:
-			 	\begin{equation}
-			 		\iis G\xyz \, \D \sigma
-			 		  = \iis G\big(f\uv, g\uv, h\uv\big) 
-			 		    \left|\rutrv| 
-			 		    \, \D A
-			 	\end{equation}
-		 	\subsubsection{2}
-		 		Let $z = f\xy$, then:
-		 		\begin{equation}
-		 			\iis G\xyz \, \D \sigma
-		 			  = \iis G\big(x, y, f\xy\big)
-		 			  \sqrt{
-		 			  	(\rond{f}{x})^2 + 
-		 			  	(\rond{f}{y})^2 + 
-		 			  	1
-	 			  	  } 
- 			  	       \ \D x \D y
-		 		\end{equation}
-	 		\subsubsection{Solved Exercise (use as a template)}
-	 			Let $z = \sqrt{x^2 + y^2} \ \, ; \ (0 \le z \le 1)$, then $\iis x^2 \, \D \sigma = ?$
+			\begin{enumerate}
+				\item If $S: \vec{r}\uv = \big(f\uv, g\uv, h\uv\big)$, then:
+					\begin{equation}
+						\iis \G\xyz \, \D \sigma
+						= \iis \G\big(f\uv, g\uv, h\uv\big) 
+						\left|\rutrv| 
+						\, \D A
+					\end{equation}
+				\item If $z = f\xy$, then:
+					\begin{equation}
+						\iis \G\xyz \, \D \sigma
+						= \iis \G\big(x, y, f\xy\big)
+						\sqrt{
+							(\rond{f}{x})^2 + 
+							(\rond{f}{y})^2 + 
+							1
+						} 
+						\ \D x \D y
+					\end{equation}				
+			\end{enumerate}
+	 		\subsubsection{Solved Exercise (use it as a template to solve questions)}
+	 			If $z = \sqrt{x^2 + y^2} \ \, ; \ (0 \le z \le 1)$, then $\iis x^2 \, \D \sigma = ?$
 	 			
 	 			Solution:
 	 			\begin{equation*}
@@ -296,7 +297,7 @@
 	    		\Div
 	    	\end{equation}
     		Definition: \\
-    		Let $\F$ be $\F\xyz = P\xyz\vec{i} + Q\xyz\vec{j} + R\xyz\vec{k}$, then:
+    		If $\F$ be $\F\xyz = P\xyz\vec{i} + Q\xyz\vec{j} + R\xyz\vec{k}$, then:
     		\begin{equation}
     			\Div \; \F \coloneqq \rond{P}{x}\vec{i} + \rond{Q}{y}\vec{j} + \rond{R}{z}\vec{k}
     		\end{equation}
@@ -309,7 +310,7 @@
     			\Curl
     		\end{equation}
     		Definition: \\
-    		Let $\F$ be $\F\xyz = P\xyz\vec{i} + Q\xyz\vec{j} + R\xyz\vec{k}$, then:
+    		If $\F$ be $\F\xyz = P\xyz\vec{i} + Q\xyz\vec{j} + R\xyz\vec{k}$, then:
     		\begin{equation}
     			\Curl \; \F \coloneqq (\rond{R}{y} - \rond{Q}{z})\vec{i} + (\rond{P}{z} - \rond{R}{x})\vec{j} + (\rond{Q}{x} - \rond{P}{y})\vec{k} 
      		\end{equation}
@@ -326,7 +327,7 @@
      			\item $\Curl(\nabla f) = 0$
      			\item $\Div(\Curl \, \F) = 0$
                 \item \begin{enumerate}
-     					\item Let $\lambda \in \mathbb{R}$, then: $\nabla(f + \lambda g) = \nabla f + \lambda \nabla g$
+     					\item If $\lambda \in \mathbb{R}$, then: $\nabla(f + \lambda g) = \nabla f + \lambda \nabla g$
 		     			\item $\Curl \, (\F + \lambda \G) = \Curl \, \F + \lambda\Curl \, \G$
 		     			\item $\Div \, (\F + \lambda \G) = \Div \, \F + \lambda\Div \, \G$
      			\end{enumerate}
@@ -350,7 +351,7 @@
      	    	\Rightarrow 
      	    	\iis \F \cdot \vec{n} \ \D \sigma = \iint\limits_D \F \cdot \left(\rutrv) \ \D A
      	    \end{equation}
-     		Let $z = g\xy; \, \xy \in R$ and $\F = (P, Q, R)$, then:
+     		If $z = g\xy; \, \xy \in R$ and $\F = (P, Q, R)$, then:
      		\begin{equation}
      			\iis \F \cdot \vec{n} \ \D \sigma = 
      			\iint\limits_R \left(-P \rond{g}{x} - Q\rond{g}{y} + R\right) \ \D A
