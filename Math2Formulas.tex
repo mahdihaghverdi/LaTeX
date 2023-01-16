@@ -336,6 +336,12 @@
      			\item $\Curl \, (f \F) = f \, \Curl \, \F + \nabla f \times \F$
      		\end{enumerate}
      	\section{Surface Integrals of Vector Fields}
+     		
+     		In mathematics, particularly multivariable calculus, a surface integral is a generalization of multiple integrals to integration over surfaces. It can be thought of as the double integral analogue of the line integral. Given a surface, one may integrate a scalar field (that is, a function of position which returns a scalar as a value) over the surface, or a vector field (that is, a function which returns a vector as value). If a region R is not flat, then it is called a surface as shown in the illustration.
+     		
+     		Surface integrals have applications in physics, particularly with the theories of classical electromagnetism. \\
+     		
+     		Consider a vector field $\F$ on a surface $S$, we define the surface integral of vector field as:
      		\begin{equation}
      			\iis \F \cdot \vec{n} \ \D \sigma
      		\end{equation}
@@ -358,11 +364,17 @@
      		\end{equation}
      	
      	\section{Divergence Theorem}
+	     	Suppose $D$ is a subset of $\mathbb{R}^{n}$ (in the case of $n = 3$, $D$ represents a volume in three-dimensional space) which is compact and has a piecewise smooth boundary $S$ (also indicated with $\partial V = S$). If $\F$ is a continuously differentiable vector field defined on a neighborhood of $D$, then
      		\begin{equation}
-     			\iis \F \cdot \vec{n} \ \D \sigma = \iiint\limits_R \Div \; \F \ \D V
+     			 \iis \F \cdot \vec{n} \ \D \sigma = \iiint\limits_D \Div \; \F \ \D V
      		\end{equation}
-     	\section{Stokes Theorem}
+     	\section{Stokes' Theorem}
+     		Stokes's theorem, also known as the Kelvin–Stokes theorem after Lord Kelvin and George Stokes, the fundamental theorem for curls or simply the curl theorem, is a theorem in vector calculus on $\R^3$. Given a vector field, the theorem relates the integral of the curl of the vector field over some surface, to the line integral of the vector field around the boundary of the surface. The classical Stokes' theorem can be stated in one sentence: \textbf{The line integral of a vector field over a loop is equal to the flux of its curl through the enclosed surface.}
+     		
+     		Stokes' theorem is a special case of the generalized Stokes' theorem. In particular, a vector field on $\R^3$ can be considered as a 1-form in which case its curl is its exterior derivative, a 2-form. \\
+     		
+     		Let $S$ be a smooth oriented surface in $\R^3$ with boundary $\partial S$. If a vector field {$\F \xyz = (P\xyz, Q\xyz, R\xyz)$ is defined and has continuous first order partial derivatives in a region containing $S$, then 
      		\begin{equation}
-     			\int\limits_{\partial S} \F \cdot \D \vec{r} = \iint\limits_S \left(\Curl \, \F\right) \cdot \vec{n} \ \D \sigma
+     			\int\limits_{\partial S} \F \cdot \D \br = \iint\limits_S \left(\Curl \, \F\right) \cdot \mathbf{n} \ \D \sigma
      		\end{equation}
 \end{document}
