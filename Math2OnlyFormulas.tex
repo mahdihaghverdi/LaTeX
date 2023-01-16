@@ -1,0 +1,348 @@
+\documentclass[12pt, fleqn]{book}
+
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linktoc=all,
+	linkcolor=blue,
+}
+
+% commands -------------------------------------------------------------------
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\ic}{\int\limits_C}
+\newcommand{\oic}{\oint\limits_C}
+\newcommand{\iis}{\iint\limits_S}
+\newcommand{\rutrv}{\vec{r}_u \times \vec{r}_v\right}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\G}{\mathbf{G}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\Curl}{\mathrm{curl}}
+\newcommand{\Div}{\mathrm{div}}
+\newcommand{\xy}{(x, y)}
+\newcommand{\xyz}{(x, y, z)}
+\newcommand{\uv}{(u, v)}
+\newcommand{\rond}[2]{\frac{\partial #1}{\partial #2}}
+% commands -------------------------------------------------------------------
+
+\title{PDF 13 to 16 Integral Formulas}
+\author{Mahdi Haghverdi}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\chapter{PDF 13}\label{pdf13}
+	\section{Line Integral}
+		\begin{equation}
+			\ic  f \, \D s = \int_{a}^{b} f\big(\vec{r}(t)\big) \, \lvert r'(t) \lvert \, \D t
+		\end{equation}	
+		
+	\section{Physical Aspect}
+		\begin{equation}
+			m = \ic  \delta \xy \, \D s
+		\end{equation}
+		
+		\begin{equation}
+			(\bar{x}, \bar{y}) = 
+			\begin{cases}
+				\bar{x} = \frac{1}{m} \ic  x \, \delta\xy \, \, \D s \\
+				\bar{y} = \frac{1}{m} \ic  y \, \delta\xy \, \, \D s
+			\end{cases}
+		\end{equation}
+	
+	\section{Line Integral of a Vector Field}
+		\begin{equation}
+			\ic  \F \cdot \D \br = \int_{a}^{b} \F\big(\br(t)\big) \cdot \br'(t) \, \D t
+		\end{equation}
+		\begin{equation}
+			\ic  \F \cdot \D \br = \ic  \mathtt{p} \, \D x + \mathtt{q} \, \D y + \mathtt{r} \, \D z
+		\end{equation}    
+	
+	\chapter{PDF 14}\label{pdf14}
+	\section{Gradient Theorem}
+		\begin{equation}
+			\F = \nabla f \Rightarrow
+			\begin{cases}
+				P = \rond{f}{x} \\
+				Q = \rond{f}{y} \\
+				R = \rond{f}{z} 
+			\end{cases}
+		\end{equation} 
+	
+		\begin{equation}
+			\ic  \F \cdot \D \br = \int_{a}^{b} \nabla f \cdot \D \br = f\big(\br(b)\big) - f\big(\br(a)\big)
+		\end{equation}     
+	
+		\begin{equation}
+			\rond{p}{y} = \rond{q}{x} \qquad
+			\rond{p}{z} = \rond{r}{x} \qquad
+			\rond{q}{z} = \rond{r}{y}
+		\end{equation}
+	
+	\section{Green's Theorem}
+		\begin{equation}
+			\oic  P \, \D x + Q \, \D y = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
+		\end{equation}
+	
+		\begin{equation}
+			\begin{split}
+				\ic  P \, \D x \, + \, Q \, \D y & = \int\limits_{C_{1}} P \, \D x \, + \, Q \, \D y + \int\limits_{C_{2}} P \, \D x \, + \, Q \, \D y \\ 
+				& = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
+			\end{split}
+		\end{equation}		    
+	\section{Area Calculations}
+		\begin{equation}
+			A = \oic  x \, \D y = - \oic  y \, \D x = \frac{1}{2} \oic  x \, \D y - y \, \D x
+		\end{equation}		
+\chapter{PDF 15}\label{pdf15}
+	\section{Piecewise Smooth Parametrized Curve}
+		\begin{equation}
+			\vec{r}\uv = \big(x\uv, \, y\uv, \, z\uv\big), \quad \uv \in R
+		\end{equation}
+
+		\begin{equation}
+			\vec{r}_u = (\rond{x}{u}, \, \rond{y}{u}, \, \rond{z}{u}) \qquad \vec{r}_v = (\rond{x}{v}, \, \rond{y}{v}, \, \rond{z}{v}) 
+		\end{equation}	
+		\subsection{Sample}
+			If $z = f\xy$, the smooth parametrized curve will be:
+			\begin{equation}
+				\vec{r}\uv = (u, v, f\uv)
+			\end{equation}
+		Partial Derivatives are defined as:
+		\begin{equation}
+			\begin{split}
+				\vec{r}_u 
+				& = (
+				\rond{u}{u}, \,
+				\rond{v}{u}, \,
+				\rond{f\uv}{u}
+				) \\
+				& = (1, 0, \rond{f}{u})
+				= \vec{i} + \rond{f}{u} \vec{k}
+			\end{split}
+		\end{equation}
+
+		\begin{equation}
+			\begin{split}
+				\vec{r}_v 
+				& = (
+				\rond{u}{v}, \,
+				\rond{v}{v}, \,
+				\rond{f\uv}{v}
+				) \\
+				& = (0, 1, \rond{f}{v})
+				= \vec{j} + \rond{f}{v} \vec{k}
+			\end{split}
+		\end{equation}
+		Cross Product of the partial derivatives:
+		\begin{equation}
+			\begin{split}
+				\vec{r}_u \times \vec{r}_v 
+				& = (
+				\frac{- \partial f}{\partial u}, \, 
+				\frac{- \partial f}{\partial v}, \, 
+				1
+				) \\
+				& = \frac{- \partial f}{\partial u} \vec{i} +
+				(\frac{- \partial f}{\partial v} \vec{j}) + 
+				\vec{k} \neq 0
+			\end{split}
+		\end{equation}
+
+	\section{Area Calculation}
+		\begin{equation}
+			A(\mathtt{S}) = \iint\limits_R \left|\rutrv| \, \D A
+		\end{equation}
+		\subsection{Theorem}
+			If $z = f\xy$, then:
+			\begin{equation}
+				A(\mathtt{S}) = 
+				\iint\limits_R 
+				\sqrt{
+					(\rond{f}{x})^2 + 
+					(\rond{f}{y})^2 + 
+					1
+				} 
+				\ \ \D A
+			\end{equation}
+	\section{Vector Integral}
+		\begin{equation}
+			\iis \G\xyz \, \D \sigma 
+			= \iint\limits_R \G\big(\vec{r}\uv\big) 
+			\left|\rutrv| 
+			\, \D A 
+			\quad \vec{r}\uv \in R
+		\end{equation}
+		\subsection{special cases}
+			\begin{enumerate}
+				\item If $S: \vec{r}\uv = \big(f\uv, g\uv, h\uv\big)$, then:
+				\begin{equation}
+					\iis \G\xyz \, \D \sigma
+					= \iis \G\big(f\uv, g\uv, h\uv\big) 
+					\left|\rutrv| 
+					\, \D A
+				\end{equation}
+				\item If $z = f\xy$, then:
+				\begin{equation}
+					\iis \G\xyz \, \D \sigma
+					= \iis \G\big(x, y, f\xy\big)
+					\sqrt{
+						(\rond{f}{x})^2 + 
+						(\rond{f}{y})^2 + 
+						1
+					} 
+					\ \D x \D y
+				\end{equation}				
+			\end{enumerate}
+		\subsubsection{Solved Exercise (use it as a template to solve questions)}
+		If $z = \sqrt{x^2 + y^2} \ \, ; \ (0 \le z \le 1)$, then $\iis x^2 \, \D \sigma = ?$
+
+			Solution:
+			\begin{equation*}
+				\begin{cases}
+					x = r\cos\theta & \\
+					y = r\sin\theta & \\
+					z = z
+				\end{cases}
+				\Rightarrow
+				\begin{cases}
+					x = r\cos\theta & \\
+					y = r\sin\theta & \\
+					z= r
+				\end{cases}
+				\, (0 \le r \le 1) \, ; (0 \le \theta \le 2\pi) 			    	
+			\end{equation*}
+			\begin{equation*}
+				\Rightarrow
+				\begin{split}
+					\vec{r}\,(r, \theta) 
+					& = (r\cos\theta, r\sin\theta, r) \\
+					\vec{r}_r      & = (\cos\theta, \sin\theta, r) \\
+					\vec{r}_\theta & = (-r\sin\theta, r\cos\theta, 0) \\
+				\end{split}
+			\end{equation*}
+			\begin{equation*}
+				\Rightarrow
+				\vec{r}_r \times \vec{r}_\theta = 
+				\begin{vmatrix}
+					i            & j             & k \\
+					\cos\theta   & \sin\theta    & r \\
+					-r\sin\theta & r\cos\theta & 0
+				\end{vmatrix} = (-r\cos\theta, -r\sin\theta, r)
+			\end{equation*}
+			\begin{equation*}
+				\Rightarrow
+				\left|\vec{r}_r \times \vec{r}_\theta\right|
+				= \sqrt{
+					\underbrace{
+						(r^2\cos^2\theta) +
+						(r^2\sin^2\theta)
+					}_{=r^2}
+					+ r^2
+				}
+				= \sqrt{2r^2}
+				= r\sqrt{2} 				
+			\end{equation*}
+			\begin{equation*}
+				\begin{split}
+					\Rightarrow \iint\limits_{[0, 1] \times [0, 2\pi]}
+					r^2\cos^2\theta \ r\sqrt{2} \ \D r \D \theta
+					& = \sqrt{2} \int_{0}^{2\pi} \int_{0}^{1} r^3\cos^2\theta \ \D r \D \theta \\
+					& = \frac{\sqrt{2}}{4} \int_{0}^{2\pi} \cos^2\theta \ \D \theta \\
+					& = \frac{\sqrt{2}}{2 \times 4} \int_{0}^{2\pi} 1 + \cos2\theta \ \D \theta \\
+					& = \frac{\sqrt{2}}{8} \left.\big(\theta + \frac{1}{2}\sin2\theta\big)\right|_0^{2\pi} \\
+					& = \frac{2\pi \times \sqrt{2}}{8} = \frac{\pi\sqrt{2}}{4}
+				\end{split}
+			\end{equation*}
+\chapter{PDF 16}\label{pdf16}
+	\section{Transforms}
+		\subsubsection{Del (nabla)}
+			Symbol:
+			\begin{equation}
+				\nabla
+			\end{equation}
+			Definition:
+			\begin{equation}
+				\nabla f \coloneqq \rond{f}{x}\vec{i} + \rond{f}{y}\vec{j} + \rond{f}{z}\vec{k}
+			\end{equation}
+			\begin{equation}
+				\nabla \coloneqq \rond{}{x}\vec{i} + \rond{}{y}\vec{j} + \rond{}{z}\vec{k}
+			\end{equation}
+		\subsubsection{Divergence}
+			Symbol:
+			\begin{equation}
+				\Div
+			\end{equation}
+			Definition: \\
+			If $\F$ be $\F\xyz = P\xyz\vec{i} + Q\xyz\vec{j} + R\xyz\vec{k}$, then:
+			\begin{equation}
+				\Div \; \F \coloneqq \rond{P}{x}\vec{i} + \rond{Q}{y}\vec{j} + \rond{R}{z}\vec{k}
+			\end{equation}
+			\begin{equation}
+				\Div \; \F \coloneqq \nabla \cdot \F
+			\end{equation}
+		\subsubsection{curl}
+			Symbol:
+			\begin{equation}
+				\Curl
+			\end{equation}
+			Definition: \\
+			If $\F$ be $\F\xyz = P\xyz\vec{i} + Q\xyz\vec{j} + R\xyz\vec{k}$, then:
+			\begin{equation}
+				\Curl \; \F \coloneqq (\rond{R}{y} - \rond{Q}{z})\vec{i} + (\rond{P}{z} - \rond{R}{x})\vec{j} + (\rond{Q}{x} - \rond{P}{y})\vec{k} 
+			\end{equation}
+			\begin{equation}
+				\Curl \; \F \coloneqq \nabla \cdot \F = 
+				\begin{vmatrix}
+					\vec{i} & \vec{j} & \vec{k} \\
+					\rond{}{x} &  \rond{}{y} & \rond{}{z} \\
+					P & Q & R
+				\end{vmatrix}
+			\end{equation}
+	\section{Theorems}
+		\begin{enumerate}
+			\item $\Curl(\nabla f) = 0$
+			\item $\Div(\Curl \, \F) = 0$
+			\item \begin{enumerate}
+				\item If $\lambda \in \mathbb{R}$, then: $\nabla(f + \lambda g) = \nabla f + \lambda \nabla g$
+				\item $\Curl \, (\F + \lambda \G) = \Curl \, \F + \lambda\Curl \, \G$
+				\item $\Div \, (\F + \lambda \G) = \Div \, \F + \lambda\Div \, \G$
+			\end{enumerate}
+			\item $\Div \, (\F \times \G) = \G \cdot \Curl \, \F - \F \cdot \Curl \, \G$
+			\item $\Div \, (f \F) = f \, \Div \, \F + \F \cdot \nabla f$
+			\item $\Curl \, (f \F) = f \, \Curl \, \F + \nabla f \times \F$
+		\end{enumerate}
+	\section{Surface Integrals of Vector Fields}
+		\begin{equation}
+			\iis \F \cdot \vec{n} \ \D \sigma
+		\end{equation}
+		\begin{equation*}
+			\begin{split}
+				\iis \F \cdot \vec{n} \ \D \sigma
+				&  = \iis \F \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\rutrv|} \ \D \sigma \\
+				& = \iint\limits_D \left[\F \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\rutrv|}\right] \left|\rutrv| \ \D A \\
+				& = \iint\limits_D \F \cdot \left(\rutrv) \ \D A
+			\end{split}
+		\end{equation*}
+		\begin{equation}
+			\Rightarrow 
+			\iis \F \cdot \vec{n} \ \D \sigma = \iint\limits_D \F \cdot \left(\rutrv) \ \D A
+		\end{equation}
+		If $z = g\xy; \, \xy \in R$ and $\F = (P, Q, R)$, then:
+		\begin{equation}
+			\iis \F \cdot \vec{n} \ \D \sigma = 
+			\iint\limits_R \left(-P \rond{g}{x} - Q\rond{g}{y} + R\right) \ \D A
+		\end{equation}
+
+	\section{Divergence Theorem}
+		\begin{equation}
+			\iis \F \cdot \vec{n} \ \D \sigma = \iiint\limits_D \Div \; \F \ \D V
+		\end{equation}
+	\section{Stokes' Theorem}
+		\begin{equation}
+			\int\limits_{\partial S} \F \cdot \D \br = \iint\limits_S \left(\Curl \, \F\right) \cdot \mathbf{n} \ \D \sigma
+		\end{equation}
+\end{document}
