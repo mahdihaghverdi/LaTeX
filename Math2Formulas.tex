@@ -10,7 +10,20 @@
 	linkcolor=blue,
 }
 
+% commands -------------------------------------------------------------------
 \newcommand{\D}{\mathrm{d}}
+\newcommand{\ic}{\int\limits_C}
+\newcommand{\iis}{\iint\limits_S}
+\newcommand{\rutrv}{\vec{r}_u \times \vec{r}_v\right}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\G}{\mathbf{G}}
+\newcommand{\Curl}{\mathrm{curl}}
+\newcommand{\Div}{\mathrm{div}}
+\newcommand{\xy}{(x, y)}
+\newcommand{\xyz}{(x, y, z)}
+\newcommand{\uv}{(u, v)}
+\newcommand{\rond}[2]{\frac{\partial #1}{\partial #2}}
+% commands -------------------------------------------------------------------
 
 \title{PDF 13 to 16 Integral Formulas}
 \author{Mahdi Haghverdi}
@@ -21,100 +34,92 @@
 \chapter{PDF 13}\label{pdf13}
 	\section{Line Integral}
 	\begin{equation}
-		\int\limits_C f \, \D s = \int_{a}^{b} f\big(\vec{r}(t)\big) \, \lvert r'(t) \lvert \, \D t
+		\ic  f \, \D s = \int_{a}^{b} f\big(\vec{r}(t)\big) \, \lvert r'(t) \lvert \, \D t
 	\end{equation}		
 
 	\section{Physical Aspect}
 		\begin{equation}
-			m = \int\limits_C \delta (x, y) \, \D s
+			m = \ic  \delta \xy \, \D s
 		\end{equation}
 		
 		\begin{equation}
 			(\bar{x}, \bar{y}) = 
 			\begin{cases}
-					\bar{x} = \frac{1}{m} \int\limits_C x \, \delta(x, y) \, \, \D s \\
-					\bar{y} = \frac{1}{m} \int\limits_C y \, \delta(x, y) \, \, \D s
+					\bar{x} = \frac{1}{m} \ic  x \, \delta\xy \, \, \D s \\
+					\bar{y} = \frac{1}{m} \ic  y \, \delta\xy \, \, \D s
 			\end{cases}
 		\end{equation}
 	
 	\section{Vector Field}
 		\begin{equation}
-			\int\limits_C F \cdot \D r = \int_{a}^{b} F\big(\vec{r}(t)\big) \cdot r'(t) \, \D t
+			\ic  F \cdot \D r = \int_{a}^{b} F\big(\vec{r}(t)\big) \cdot r'(t) \, \D t
 		\end{equation}
 		
 		\begin{equation}
-			\int\limits_C F \cdot \D r = \int\limits_C \mathtt{p} \, \D x + \mathtt{q} \, \D y + \mathtt{r} \, \D z
+			\ic  F \cdot \D r = \ic  \mathtt{p} \, \D x + \mathtt{q} \, \D y + \mathtt{r} \, \D z
 		\end{equation}    
-
-
-
-
-
-
-
-
 
 \chapter{PDF 14}\label{pdf14}
     \section{Gradient Vector}
 		\begin{equation}
 			F = \nabla f \Rightarrow
 			\begin{cases}
-				p = \frac{\partial f}{\partial x} \\
-				q = \frac{\partial f}{\partial y} \\
-				r = \frac{\partial f}{\partial z} 
+				p = \rond{f}{x} \\
+				q = \rond{f}{y} \\
+				r = \rond{f}{z} 
 			\end{cases}
 		\end{equation} 
 		
 		\begin{equation}
-			\int\limits_C F \cdot \D r = \int_{a}^{b} \nabla f \cdot \D r = f\big(\vec{r}(b)\big) - f\big(\vec{r}(a)\big)
+			\ic  F \cdot \D r = \int_{a}^{b} \nabla f \cdot \D r = f\big(\vec{r}(b)\big) - f\big(\vec{r}(a)\big)
 		\end{equation}     
 		
 		\begin{equation}
-			\frac{\partial p}{\partial y} = \frac{\partial q}{\partial x} \qquad
-			\frac{\partial p}{\partial z} = \frac{\partial r}{\partial x} \qquad
-			\frac{\partial q}{\partial z} = \frac{\partial r}{\partial y}
+			\rond{p}{y} = \rond{q}{x} \qquad
+			\rond{p}{z} = \rond{r}{x} \qquad
+			\rond{q}{z} = \rond{r}{y}
 		\end{equation}
 		
 		\section{Green Theorem}
 			\begin{equation}
-				\int\limits_C P \, \D x + Q \, \D y = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \D A
+				\ic  P \, \D x + Q \, \D y = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
 			\end{equation}
 		
 		\section{Area Calculations}
 			\begin{equation}
-				A = \int\limits_C x \, \D y = - \int\limits_C y \, \D x = \frac{1}{2} \int\limits_C x \, \D y - y \, \D x
+				A = \ic  x \, \D y = - \ic  y \, \D x = \frac{1}{2} \ic  x \, \D y - y \, \D x
 			\end{equation}
 
 		\section{Green Theorem 2}
 			\begin{equation}
-				\int\limits_C p \, \D x + q \, \D y = \int\limits_{C_{1}} p \, \D x + q \, \D y + \int\limits_{C_{2}} p \, \D x + q \, \D y = \iint\limits_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \D A
+				\ic  p \, \D x + q \, \D y = \int\limits_{C_{1}} p \, \D x + q \, \D y + \int\limits_{C_{2}} p \, \D x + q \, \D y = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
 			\end{equation}
 		
 \chapter{PDF 15}\label{pdf15}
 	\section{Smooth Parametrized Curve}
 		\begin{equation}
-			\vec{r}(u, v) = \big(x(u, v), \, y(u, v), \, z(u, v)\big), \quad (u, v) \in R
+			\vec{r}\uv = \big(x\uv, \, y\uv, \, z\uv\big), \quad \uv \in R
 		\end{equation}
 		
 		\begin{equation}
-			\vec{r}_u = (\frac{\partial x}{\partial u}, \, \frac{\partial y}{\partial u}, \, \frac{\partial z}{\partial u}) \qquad \vec{r}_v = (\frac{\partial x}{\partial v}, \, \frac{\partial y}{\partial v}, \, \frac{\partial z}{\partial v}) 
+			\vec{r}_u = (\rond{x}{u}, \, \rond{y}{u}, \, \rond{z}{u}) \qquad \vec{r}_v = (\rond{x}{v}, \, \rond{y}{v}, \, \rond{z}{v}) 
 		\end{equation}	
 		\subsection{Sample}
-			Let $z = f(x, y)$, the smooth parametrized curve will be:
+			Let $z = f\xy$, the smooth parametrized curve will be:
 				\begin{equation}
-					\vec{r}(u, v) = (u, v, f(u, v))
+					\vec{r}\uv = (u, v, f\uv)
 				\end{equation}
 		 	Partial Derivatives will be:
 			 	\begin{equation}
 				 	\begin{split}
 				 		\vec{r}_u 
 				 		& = (
-				 			\frac{\partial u}{\partial u}, \,
-				 			\frac{\partial v}{\partial u}, \,
-				 			\frac{\partial f(u, v)}{\partial u}
+				 			\rond{u}{u}, \,
+				 			\rond{v}{u}, \,
+				 			\rond{f\uv}{u}
 				 		) \\
-				 		& = (1, 0, \frac{\partial f}{\partial u})
-			              = \vec{i} + \frac{\partial f}{\partial u} \vec{k}
+				 		& = (1, 0, \rond{f}{u})
+			              = \vec{i} + \rond{f}{u} \vec{k}
 				 	\end{split}
 			 	\end{equation}
 		 	
@@ -122,12 +127,12 @@
 				 	\begin{split}
 						\vec{r}_v 
 						& = (
-								\frac{\partial u}{\partial v}, \,
-								\frac{\partial v}{\partial v}, \,
-								\frac{\partial f(u, v)}{\partial v}
+								\rond{u}{v}, \,
+								\rond{v}{v}, \,
+								\rond{f\uv}{v}
 							) \\
-						& = (0, 1, \frac{\partial f}{\partial v})
-						  = \vec{j} + \frac{\partial f}{\partial v} \vec{k}
+						& = (0, 1, \rond{f}{v})
+						  = \vec{j} + \rond{f}{v} \vec{k}
 					\end{split}
 				\end{equation}
 	 	    Cross Product of the partial derivatives:
@@ -146,51 +151,51 @@
 			\end{equation}
 	\section{Area}
 		\begin{equation}
-			A(\mathtt{S}) = \iint\limits_R \left|\vec{r}_u \times \vec{r}_v\right| \, \D A
+			A(\mathtt{S}) = \iint\limits_R \left|\rutrv| \, \D A
 		\end{equation}
 		\subsection{Theorem}
-			Let $z = f(x, y)$, then:
+			Let $z = f\xy$, then:
 			\begin{equation}
 				A(\mathtt{S}) = 
 				  \iint\limits_R 
 				  \sqrt{
-				  	(\frac{\partial f}{\partial x})^2 + 
-				  	(\frac{\partial f}{\partial y})^2 + 
+				  	(\rond{f}{x})^2 + 
+				  	(\rond{f}{y})^2 + 
 				  	1
 			  	} 
 				  \ \ \D A
 			\end{equation}
 	\section{Vector Integral}
 		\begin{equation}
-			\iint\limits_S G(x, y, z) \, \D \sigma 
-			  = \iint\limits_R G\big(\vec{r}(u, v)\big) 
-			    \left|\vec{r}_u \times \vec{r}_v\right| 
+			\iis G\xyz \, \D \sigma 
+			  = \iint\limits_R G\big(\vec{r}\uv\big) 
+			    \left|\rutrv| 
 			    \, \D A 
-			    \quad \vec{r}(u, v) \in R
+			    \quad \vec{r}\uv \in R
 		\end{equation}
 		\subsection{special cases}
 			\subsubsection{1}
-				Let $S: \vec{r}(u, v) = \big(f(u, v), g(u, v), h(u, v)\big)$, then:
+				Let $S: \vec{r}\uv = \big(f\uv, g\uv, h\uv\big)$, then:
 			 	\begin{equation}
-			 		\iint\limits_S G(x, y, z) \, \D \sigma
-			 		  = \iint\limits_S G\big(f(u, v), g(u, v), h(u, v)\big) 
-			 		    \left|\vec{r}_u \times \vec{r}_v\right| 
+			 		\iis G\xyz \, \D \sigma
+			 		  = \iis G\big(f\uv, g\uv, h\uv\big) 
+			 		    \left|\rutrv| 
 			 		    \, \D A
 			 	\end{equation}
 		 	\subsubsection{2}
-		 		Let $z = f(x, y)$, then:
+		 		Let $z = f\xy$, then:
 		 		\begin{equation}
-		 			\iint\limits_S G(x, y, z) \, \D \sigma
-		 			  = \iint\limits_S G\big(x, y, f(x, y)\big)
+		 			\iis G\xyz \, \D \sigma
+		 			  = \iis G\big(x, y, f\xy\big)
 		 			  \sqrt{
-		 			  	(\frac{\partial f}{\partial x})^2 + 
-		 			  	(\frac{\partial f}{\partial y})^2 + 
+		 			  	(\rond{f}{x})^2 + 
+		 			  	(\rond{f}{y})^2 + 
 		 			  	1
 	 			  	  } 
  			  	       \ \D x \D y
 		 		\end{equation}
 	 		\subsubsection{Solved Exercise (use as a template)}
-	 			Let $z = \sqrt{x^2 + y^2} \ \, ; \ (0 \le z \le 1)$, then $\iint\limits_S x^2 \, \D \sigma = ?$
+	 			Let $z = \sqrt{x^2 + y^2} \ \, ; \ (0 \le z \le 1)$, then $\iis x^2 \, \D \sigma = ?$
 	 			
 	 			Solution:
 	 			\begin{equation*}
@@ -258,112 +263,74 @@
 			\end{equation}
 			Definition:
 			\begin{equation}
-				\nabla f \coloneqq \frac{\partial f}{\partial x}\vec{i} + \frac{\partial f}{\partial y}\vec{j} + \frac{\partial f}{\partial z}\vec{k}
+				\nabla f \coloneqq \rond{f}{x}\vec{i} + \rond{f}{y}\vec{j} + \rond{f}{z}\vec{k}
 			\end{equation}
 		    \begin{equation}
-		    	\nabla \coloneqq \frac{\partial}{\partial x}\vec{i} + \frac{\partial}{\partial y}\vec{j} + \frac{\partial}{\partial z}\vec{k}
+		    	\nabla \coloneqq \rond{}{x}\vec{i} + \rond{}{y}\vec{j} + \rond{}{z}\vec{k}
 		    \end{equation}
 	    \subsubsection{Divergence}
 	    	Symbol:
 	    	\begin{equation}
-	    		\mathrm{div}
+	    		\Div
 	    	\end{equation}
     		Definition: \\
-    		Let $\mathbf{F}$ be $\mathbf{F}(x, y, z) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k}$, then:
+    		Let $\F$ be $\F\xyz = P\xyz\vec{i} + Q\xyz\vec{j} + R\xyz\vec{k}$, then:
     		\begin{equation}
-    			\mathrm{div} \; \mathbf{F} \coloneqq \frac{\partial P}{\partial x}\vec{i} + \frac{\partial Q}{\partial y}\vec{j} + \frac{\partial R}{\partial z}\vec{k}
+    			\Div \; \F \coloneqq \rond{P}{x}\vec{i} + \rond{Q}{y}\vec{j} + \rond{R}{z}\vec{k}
     		\end{equation}
     		\begin{equation}
-    			\mathrm{div} \; \mathbf{F} \coloneqq \nabla \cdot \mathbf{F}
+    			\Div \; \F \coloneqq \nabla \cdot \F
     		\end{equation}
     	\subsubsection{curl}
     		Symbol:
     		\begin{equation}
-    			\mathrm{curl}
+    			\Curl
     		\end{equation}
     		Definition: \\
-    		Let $\mathbf{F}$ be $\mathbf{F}(x, y, z) = P(x, y, z)\vec{i} + Q(x, y, z)\vec{j} + R(x, y, z)\vec{k}$, then:
+    		Let $\F$ be $\F\xyz = P\xyz\vec{i} + Q\xyz\vec{j} + R\xyz\vec{k}$, then:
     		\begin{equation}
-    			\mathrm{curl} \; \mathbf{F} \coloneqq (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z})\vec{i} + (\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x})\vec{j} + (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\vec{k} 
+    			\Curl \; \F \coloneqq (\rond{R}{y} - \rond{Q}{z})\vec{i} + (\rond{P}{z} - \rond{R}{x})\vec{j} + (\rond{Q}{x} - \rond{P}{y})\vec{k} 
      		\end{equation}
      		\begin{equation}
-     			\mathrm{curl} \; \mathbf{F} \coloneqq \nabla \cdot \mathbf{F} = 
+     			\Curl \; \F \coloneqq \nabla \cdot \F = 
      			\begin{vmatrix}
      				\vec{i} & \vec{j} & \vec{k} \\
-     				\frac{\partial}{\partial x} &  \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+     				\rond{}{x} &  \rond{}{y} & \rond{}{z} \\
      				P & Q & R
      			\end{vmatrix}
      		\end{equation}
      	\section{Theorems}
      		\begin{enumerate}
-     			\item $\mathrm{curl}(\nabla f) = 0$
-     			\item $\mathrm{div}(\mathrm{curl} \, \mathbf{F}) = 0$
+     			\item $\Curl(\nabla f) = 0$
+     			\item $\Div(\Curl \, \F) = 0$
                 \item \begin{enumerate}
      					\item Let $\lambda \in \mathbb{R}$, then: $\nabla(f + \lambda g) = \nabla f + \lambda \nabla g$
-		     			\item $\mathrm{curl} \, (\mathbf{F} + \lambda \mathbf{G}) = \mathrm{curl} \, \mathbf{F} + \lambda\mathrm{curl} \, \mathbf{G}$
-		     			\item $\mathrm{div} \, (\mathbf{F} + \lambda \mathbf{G}) = \mathrm{div} \, \mathbf{F} + \lambda\mathrm{div} \, \mathbf{G}$
+		     			\item $\Curl \, (\F + \lambda \G) = \Curl \, \F + \lambda\Curl \, \G$
+		     			\item $\Div \, (\F + \lambda \G) = \Div \, \F + \lambda\Div \, \G$
      			\end{enumerate}
-     			\item $\mathrm{div} \, (\mathbf{F} \times \mathbf{G}) = \mathbf{G} \cdot \mathrm{curl} \, \mathbf{F} - \mathbf{F} \cdot \mathrm{curl} \, \mathbf{G}$
-     			\item $\mathrm{div} \, (f \mathbf{F}) = f \, \mathrm{div} \, \mathbf{F} + \mathbf{F} \cdot \nabla f$
-     			\item $\mathrm{curl} \, (f \mathbf{F}) = f \, \mathrm{curl} \, \mathbf{F} + \nabla f \times \mathbf{F}$
+     			\item $\Div \, (\F \times \G) = \G \cdot \Curl \, \F - \F \cdot \Curl \, \G$
+     			\item $\Div \, (f \F) = f \, \Div \, \F + \F \cdot \nabla f$
+     			\item $\Curl \, (f \F) = f \, \Curl \, \F + \nabla f \times \F$
      		\end{enumerate}
      	\section{Surface Integrals of Vector Fields}
      		\begin{equation}
-     			\iint\limits_S \mathbf{F} \cdot \vec{n} \ \D \sigma
+     			\iis \F \cdot \vec{n} \ \D \sigma
      		\end{equation}
      		\begin{equation*}
      			\begin{split}
-     				\iint\limits_S \mathbf{F} \cdot \vec{n} \ \D \sigma
-     				&  = \iint\limits_S \mathbf{F} \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\vec{r}_u \times \vec{r}_v\right|} \ \D \sigma \\
-     				& = \iint\limits_D \left[\mathbf{F} \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\vec{r}_u \times \vec{r}_v\right|}\right] \left|\vec{r}_u \times \vec{r}_v\right| \ \D A \\
-     				& = \iint\limits_D \mathbf{F} \cdot \left(\vec{r}_u \times \vec{r}_v\right) \ \D A
+     				\iis \F \cdot \vec{n} \ \D \sigma
+     				&  = \iis \F \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\rutrv|} \ \D \sigma \\
+     				& = \iint\limits_D \left[\F \cdot \frac{\vec{r}_u \times \vec{r}_v}{\left|\rutrv|}\right] \left|\rutrv| \ \D A \\
+     				& = \iint\limits_D \F \cdot \left(\rutrv) \ \D A
      			\end{split}
      		\end{equation*}
      	    \begin{equation}
      	    	\Rightarrow 
-     	    	\iint\limits_S \mathbf{F} \cdot \vec{n} \ \D \sigma = \iint\limits_D \mathbf{F} \cdot \left(\vec{r}_u \times \vec{r}_v\right) \ \D A
+     	    	\iis \F \cdot \vec{n} \ \D \sigma = \iint\limits_D \F \cdot \left(\rutrv) \ \D A
      	    \end{equation}
-     		Let $z = g(x, y); \, (x, y) \in R$ and $\mathbf{F} = (P, Q, R)$, then:
+     		Let $z = g\xy; \, \xy \in R$ and $\F = (P, Q, R)$, then:
      		\begin{equation}
-     			\iint\limits_S \mathbf{F} \cdot \vec{n} \ \D \sigma = 
-     			\iint\limits_R \left(-P \frac{\partial g}{\partial x} - Q\frac{\partial g}{\partial y} + R\right) \ \D A
+     			\iis \F \cdot \vec{n} \ \D \sigma = 
+     			\iint\limits_R \left(-P \rond{g}{x} - Q\rond{g}{y} + R\right) \ \D A
      		\end{equation}
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
-     	
 \end{document}
