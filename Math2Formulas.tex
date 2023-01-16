@@ -13,10 +13,13 @@
 % commands -------------------------------------------------------------------
 \newcommand{\D}{\mathrm{d}}
 \newcommand{\ic}{\int\limits_C}
+\newcommand{\oic}{\oint\limits_C}
 \newcommand{\iis}{\iint\limits_S}
 \newcommand{\rutrv}{\vec{r}_u \times \vec{r}_v\right}
 \newcommand{\F}{\mathbf{F}}
 \newcommand{\G}{\mathbf{G}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\br}{\mathbf{r}}
 \newcommand{\Curl}{\mathrm{curl}}
 \newcommand{\Div}{\mathrm{div}}
 \newcommand{\xy}{(x, y)}
@@ -33,10 +36,13 @@
 	\tableofcontents
 \chapter{PDF 13}\label{pdf13}
 	\section{Line Integral}
-	\begin{equation}
-		\ic  f \, \D s = \int_{a}^{b} f\big(\vec{r}(t)\big) \, \lvert r'(t) \lvert \, \D t
-	\end{equation}		
-
+		For some scalar field $f\colon U\to \mathbb {R}$ where U ⊆ R n $U\subseteq \mathbb {R}^{n}$, the line integral along a \textit{piecewise smooth curve} $C\subset U$ is defined as:
+		\begin{equation}
+			\ic  f \, \D s = \int_{a}^{b} f\big(\vec{r}(t)\big) \, \lvert r'(t) \lvert \, \D t
+		\end{equation}	
+		
+	    where $\vec{r} \colon [a,b]\to C$ is an arbitrary bijective parametrization of the curve $C$ such that $\vec{r}(a)$ and $\vec{r}(b)$ give the endpoints of $C$ and $a < b$.
+    
 	\section{Physical Aspect}
 		\begin{equation}
 			m = \ic  \delta \xy \, \D s
@@ -50,53 +56,69 @@
 			\end{cases}
 		\end{equation}
 	
-	\section{Vector Field}
+	\section{Line Integral of a Vector Field}
+		For a vector field $\F \colon U \subseteq \R^{n} \to \R^{n}$, the line integral along a piecewise smooth curve $C \subset U$, in the direction of $\vec{r}$, is defined as:
 		\begin{equation}
-			\ic  \F \cdot \D r = \int_{a}^{b} \F\big(\vec{r}(t)\big) \cdot r'(t) \, \D t
+			\ic  \F \cdot \D \br = \int_{a}^{b} \F\big(\br(t)\big) \cdot \br'(t) \, \D t
 		\end{equation}
 		
+		where $\cdot$ is the dot product, and $\br \colon [a, b] \to C$ is a bijective parametrization of the curve $C$ such that $\br(a)$ and $\br(b)$ give the endpoints of $C$. 
+		
+		Line integral of a vector field, also can be shown as below:
 		\begin{equation}
-			\ic  F \cdot \D r = \ic  \mathtt{p} \, \D x + \mathtt{q} \, \D y + \mathtt{r} \, \D z
+			\ic  \F \cdot \D \br = \ic  \mathtt{p} \, \D x + \mathtt{q} \, \D y + \mathtt{r} \, \D z
 		\end{equation}    
 
 \chapter{PDF 14}\label{pdf14}
-    \section{Gradient Vector}
+    \section{Gradient Theorem}
+	    The gradient theorem, also known as the fundamental theorem of calculus for line integrals, says that a line integral through a gradient field can be evaluated by evaluating the original scalar field at the endpoints of the curve. The theorem is a generalization of the second fundamental theorem of calculus to any curve in a plane or space (generally n-dimensional) rather than just the real line. 
+	    
 		\begin{equation}
-			F = \nabla f \Rightarrow
+			\F = \nabla f \Rightarrow
 			\begin{cases}
-				p = \rond{f}{x} \\
-				q = \rond{f}{y} \\
-				r = \rond{f}{z} 
+				P = \rond{f}{x} \\
+				Q = \rond{f}{y} \\
+				R = \rond{f}{z} 
 			\end{cases}
 		\end{equation} 
 		
+	    For $\F \colon U \subseteq \R^n \to \R$ as a differentiable function and any continuous curve in $U$ which starts at a point $a$ and ends at a point $b$, then 
+		
 		\begin{equation}
-			\ic  F \cdot \D r = \int_{a}^{b} \nabla f \cdot \D r = f\big(\vec{r}(b)\big) - f\big(\vec{r}(a)\big)
+			\ic  \F \cdot \D \br = \int_{a}^{b} \nabla f \cdot \D \br = f\big(\br(b)\big) - f\big(\br(a)\big)
 		\end{equation}     
 		
+		where $\nabla f$ denotes the gradient vector field of $\F$. \\ \\	
+			
+		To check if a vector is a gradient vector:
 		\begin{equation}
 			\rond{p}{y} = \rond{q}{x} \qquad
 			\rond{p}{z} = \rond{r}{x} \qquad
 			\rond{q}{z} = \rond{r}{y}
 		\end{equation}
 		
-		\section{Green Theorem}
+		\section{Green's Theorem}
+			Let $C$ be a positively oriented, piecewise smooth, simple closed curve in a plane, and let $D$ be the region bounded by $C$. If $P$ and $Q$ are functions of $\xy$ defined on an open region containing $D$ and have continuous partial derivatives there, then 
+			
 			\begin{equation}
-				\ic  P \, \D x + Q \, \D y = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
+				\oic  P \, \D x + Q \, \D y = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
 			\end{equation}
 		
+		    where the path of integration along $C$ is anticlockwise. \\
+		    
+		    If curve $C$ is divided into pieces like $C = C_1 \bigcup C_2$, then
+		    \begin{equation}
+		    	\begin{split}
+		    		\ic  P \, \D x \, + \, Q \, \D y & = \int\limits_{C_{1}} P \, \D x \, + \, Q \, \D y + \int\limits_{C_{2}} P \, \D x \, + \, Q \, \D y \\ 
+		    		& = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
+		    	\end{split}
+		    \end{equation}		    
 		\section{Area Calculations}
 			\begin{equation}
-				A = \ic  x \, \D y = - \ic  y \, \D x = \frac{1}{2} \ic  x \, \D y - y \, \D x
-			\end{equation}
-
-		\section{Green Theorem 2}
-			\begin{equation}
-				\ic  p \, \D x + q \, \D y = \int\limits_{C_{1}} p \, \D x + q \, \D y + \int\limits_{C_{2}} p \, \D x + q \, \D y = \iint\limits_D \left(\rond{Q}{x} - \rond{P}{y}\right) \D A
-			\end{equation}
-		
+				A = \oic  x \, \D y = - \oic  y \, \D x = \frac{1}{2} \oic  x \, \D y - y \, \D x
+			\end{equation}		
 \chapter{PDF 15}\label{pdf15}
-	\section{Smooth Parametrized Curve}
+	\section{Piecewise Parametrized Smooth Curve}
 		\begin{equation}
 			\vec{r}\uv = \big(x\uv, \, y\uv, \, z\uv\big), \quad \uv \in R
 		\end{equation}
