@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\usepackage{multicol}
+\usepackage{multirow}
 \usepackage{rotating}
 \usepackage{calc}
 \usepackage[dvips=false,pdftex=false,vtex=false,b5paper]{geometry}
@@ -21,8 +23,10 @@
 		\begin{center}	
  			\caption{جدول زمان‌بندی دروس ترم ۴}	
 			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-				\hline
-				روز & ۸:۰۰ تا ۹:۰۰ & ۹:۰۰ تا ۱۰:۰۰ &
+				\cline{2-11}
+				\multicolumn{1}{c}{}
+				& \multicolumn{10}{|c|}{\textbf{ساعات درسی}} \\ \hline
+			   \textbf{روز} & ۸:۰۰ تا ۹:۰۰ & ۹:۰۰ تا ۱۰:۰۰ &
      			\multicolumn{2}{|c|}{۱۰:۰۰ تا ۱۲:۰۰} &
      			۱۲:۰۰ تا ۱۳:۰۰ & ۱۳:۰۰ تا ۱۴:۰۰ &
 				\multicolumn{2}{|c|}{۱۴:۰۰ تا ۱۶:۰۰} &
