@@ -1,28 +1,62 @@
-\documentclass[12pt]{article}
+\documentclass[12pt, dvipsnames, svgnames, x11names]{article}
 
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks=true,
-	linkcolor=blue,
-	filecolor=magenta,      
-	urlcolor=cyan,
-	pdftitle={Overleaf Example},
-	pdfpagemode=FullScreen,
-}
-
-\urlstyle{same}
-
+\usepackage{paralist}
 \title{Summer plans \& works to do}
 \author{Mahdi Haghverdi}
 \date{}
 
+% URLs and hyperlinks -----------------------------
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=DeepSkyBlue4,
+	filecolor=magenta,      
+	urlcolor=DeepSkyBlue3,
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+%--------------------------------------------------
+
+%--------------------------------------------------
+\usepackage{tcolorbox}
+% \colorlet{LightLavender}{Lavender!40!}
+
+\newcommand{\colourbox}[2]{
+    \tcbox[on line, 
+	 		boxsep=4pt, 
+	 		left=0pt,
+	 		right=0pt,
+	 		top=0pt,
+	 		bottom=-1pt,
+	 		colframe=white,
+	 		colback={#1},  
+	]{#2}
+}
+%--------------------------------------------------
+
+% Tags --------------------------------------------
+\newcommand{\mustread}{{\small\colourbox{red}{must-read}}}
+\newcommand{\betteread}{{\small\colourbox{Dandelion}{better-to-read}}}
+
+\newcommand{\overonethpages}[1]{{\small\colourbox{DarkOrchid3!75!}{over-{#1}-pages}}}
+\newcommand{\overfivehpages}[1]{{\small\colourbox{DeepPink!85!}{over-{#1}-pages}}}
+\newcommand{\overtwofivepages}[1]{{\small\colourbox{DeepPink!55!}{under-{#1}-pages}}}
+\newcommand{\overonehpages}[1]{{\small\colourbox{DeepPink!25!}{under-{#1}-pages}}}
+
+\newcommand{\priceoverfour}[1]{{\small\colourbox{Green3!85!}{{#1}}}}
+\newcommand{\priceoverthree}[1]{{\small\colourbox{Green3!55!}{{#1}}}}
+\newcommand{\priceovertwo}[1]{{\small\colourbox{Green3!35!}{{#1}}}}
+\newcommand{\priceoverone}[1]{{\small\colourbox{Green3!25!}{{#1}}}}
+\newcommand{\priceunderone}[1]{{\small\colourbox{Green3!15!}{{#1}}}}
+%--------------------------------------------------
+
 \begin{document}
 	\maketitle
 	\tableofcontents
-	\newpage
-	
-	\begin{abstract}
-		Well summer, the season of progress. The season to learn new things and focus on what you really want and build your career.
+	\newpage 
+	\section{Overview}
+		Well summer, \textbf{the season of progress}. The season to learn new things and focus on what you really want and build your career.
 
 		After spending two semester in the university, it is clear that \underline{meanwhile} studying, learning \textbf{new}  things, is hard! It's possible but it's hard. So summer is the time which I have to value a lot and do my best to use it right.
 		
@@ -33,11 +67,9 @@
 		The deep learning course needs a book nearby so the first book is \textit{Deep Learning for Coders With Fastai and PyTorch}.
 		Refreshing my Python skills is something that I never miss and enjoy a lot, and the most recent book which is published is \textit{Python Distilled} by \textit{David Beazly}. But I have to make a dicision
 		Watching video courses and reading books are the main activities of the summer, but without spending or more precisely, acquiring time to rest, nobody can learn anything; listening to music and podcast and watching movies are the main non-active things and biking is the main physical activity of summer.
-				
-	\end{abstract}
 
 	\section{Courses}
-		These are the video courses of summer
+		These are the video courses
 		
 		\subsection{Deep learning}
 			The nice deep learning course is at \url{https://course.fast.ai/}.
@@ -51,37 +83,84 @@
 			
 			Notes:
 			\begin{itemize}
-				\item Each video pretty long, on average they last one hour and 30 minutes! The longer the video, the more knowledge they contain AND the more attention they need AND the more practice as well.
+				\item Each video is pretty long, on average they last one hour and 30 minutes! The longer the video, the more knowledge they contain AND the more attention they need AND the more practice as well.
 				
 				\item Each lesson has a \textit{How to complete lesson N} section (like \url{https://course.fast.ai/Lessons/lesson1.html#how-to-complete-lesson-1},) in which says: \textit{As well as watching the video and working through the notebooks, you should also read the relevent chapter(s) of the fast.ai book, Practical Deep Learning for Coders. Each lesson will tell you what chapter you need to read, just below the video}
 			\end{itemize}
 		
-		    After all, the dedicated time and effort must be huge.
+		    After all, \underline{the dedicated time and effort must be huge.}
 		    	
 		\subsection{FastAPI}
 			\textit{FastAPI framework, high performance, easy to learn, fast to code, ready for production}
 			
 			We all know FastAPI and there is no need for more introduction.
-			The course I wanna watch is \href{https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjUj9jUhOH9AhUPHOwKHdrGCPcQwqsBegQIChAE&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D0sOvCWFmrtA&usg=AOvVaw0SzlpIrXRghxcsNXprzEkT}{this course}.
+			The course I wanna watch is \href{https://youtu.be/0sOvCWFmrtA}{this course}.
 			
-			The course is a 19-hour long video which is downloaded and cut already. 
-			
-			The important things are:
+			The course is a 19-hour long video which is downloaded and cut already. The important things are:
 			\begin{itemize}
-				\item The course is created one year ago and it is slightly outdated, so the \href{fastapi.tiangolo.com}{documentation} must be read along the course.
+				\item The course is created one year ago and it is slightly outdated, so the \href{https://fastapi.tiangolo.com}{documentation} must be read along the course.
 				
-				\item Course will just show you how to use FastAPI and the real learning happens when I do projects.
+				\item Course will just show you how to use FastAPI and the real learning happens when doing projects.
 				
 				\item It's good to define nice projects whenever I came to an idea
-				e.g. \textit{The API to send pictures of \url{unsplash.com} to my friends :)}
+				e.g. \textit{The API to send pictures of \url{https://unsplash.com} to my friends} :)
 			\end{itemize}
 	
 	\section{Books}
-		\subsection{Deep Learning for Coders With Fastai and PyTorch}
-		\subsection{Python Distilled}
-		\subsection{Fluent Python}
-		\subsection{Build a Career in Data Science}
+		\subsection{\href{https://skybooks.ir/products/Deep-Learning-for-Coders-with-fastai-and-PyTorch}{Deep Learning for Coders With Fastai and PyTorch}}
 		
+			\begin{inparadesc}
+				\item \mustread
+				\item \overfivehpages{six-hundred}
+				\item \priceoverthree{297}
+			\end{inparadesc}
+			\vspace{3mm}
+			
+			As a 622-page and comprehensive book, it needs attention and time. The book may get printed, just to be read easily.
+			
+		\subsection{\href{https://skybooks.ir/products/Fluent-Python}{Fluent Python}}
+			\begin{inparadesc}
+				\item \betteread
+				\item \overonethpages{one-thousand}
+				\item \priceoverfour{505}
+			\end{inparadesc}
+			\vspace{3mm}
+			
+			I think it is the most complete Python book forever! It has nearly 1000. I love to read it but it may take a lot :(
+		\subsection{\href{https://skybooks.ir/products/Build-a-Career-in-Data-Science}{Build a Career in Data Science}}
+			\begin{inparadesc}
+				\item \betteread
+				\item \overtwofivepages{four-hundred}
+				\item \priceovertwo{194}
+			\end{inparadesc}
+			\vspace{3mm}
+			
+			It is a nice book, many good information and useful stuff are written in it. Only in 352 pages and from a nice publication: \textit{Manning} :)
+			
+		\subsection{\href{https://skybooks.ir/products/Inside-The-Python-Virtual-Machine}{Inside the Python Virtual Machine}}\label{ipvm}
+			\begin{inparadesc}
+				\item \betteread
+				\item \overonehpages{one-hundred}
+				\item \priceunderone{108}
+			\end{inparadesc}
+			\vspace{3mm}
+			
+			I really want to read this. The written stuff are the most exciting parts of CPython :))
+		     
+		    Starts from Compilation, then goes inside the Objects of Python, continues the journey to the Code object and Frames all along side the execution. The most important things I always wanted to know about :)
+	
+		\subsection{\href{https://skybooks.ir/products/CPython-Internals}{CPython Internals}}		
+			\begin{inparadesc}
+				\item \betteread
+				\item \overtwofivepages{four-hundred}
+				\item \priceovertwo{209}
+			\end{inparadesc}
+			\vspace{3mm}
+			
+			Written by the hands of Anthony Shaw and published by RealPython, is there anything to mention? NOTHING :)))
+			
+			Just like \ref*{ipvm} it digs down to the insiders of CPython.
+			
 	\section{Habits}
 		\subsection{Podcast}
 		\subsection{Music}
