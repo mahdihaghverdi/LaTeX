@@ -18,9 +18,8 @@
 \urlstyle{same}
 %--------------------------------------------------
 
-%--------------------------------------------------
+% colorbox ----------------------------------------
 \usepackage{tcolorbox}
-% \colorlet{LightLavender}{Lavender!40!}
 
 \newcommand{\colourbox}[2]{
     \tcbox[on line, 
@@ -50,6 +49,12 @@
 \newcommand{\pricenearthree}[1]{{\small\colourbox{Green3!55!}{{#1} T}}}
 \newcommand{\priceneartwo}[1]{{\small\colourbox{Green3!35!}{{#1} T}}}
 \newcommand{\pricenearone}[1]{{\small\colourbox{Green3!15!}{{#1} T}}}
+
+\newcommand{\always}{{\small\normalfont\colourbox{red}{always}}}
+\newcommand{\weekend}{{\small\normalfont\colourbox{DarkOrchid3!75!}{weekends}}}
+\newcommand{\timetotime}{{\small\normalfont\colourbox{Dandelion}{time-to-time}}}
+\newcommand{\normal}{{\small\normalfont\colourbox{DarkGray!70!}{activity}}}
+\newcommand{\rest}{{\small\normalfont\colourbox{DeepPink!85!}{rest}}}
 %--------------------------------------------------
 
 \begin{document}
@@ -196,10 +201,18 @@
 			In CPython Internals, you’ll unlock the inner workings of the Python language, learn how to compile the Python interpreter from source code, and cover what you’ll need to know to confidently start contributing to CPython yourself!
 			
 	\section{Habits}
-		\subsection{Podcast}
-		\subsection{Music}
-		\subsection{Films}
-		\subsection{Biking}
-%	\section{Skills}
+		\subsection{Podcast \timetotime \normal}
+			Listening to old and new Python podcasts, specially from \textit{Talk Python to Me} channel helps a lot, It provides many information, introduces mane new technologies and brings many good people to the show.
+			
+		\subsection{Music \always}
+			As always: \textit{I live because of my musics} :)
+			
+		\subsection{Films \weekend \rest}
+			Watching new films and series, enjoys a LOT. The dedicated series which I want to watch is \textit{The Mentalist}. A TV show which remembers me of Sherlock!
+			
+			Also I will download the films which I haven't watch in 1080p quality and enjoy the leisure :)
+			
+		\subsection{Biking \timetotime \normal}
+			Physical activity to become fresh again, and to empty the mind outta the learned stuff is really important and Biking has to be done in summer.
 	
 \end{document}
