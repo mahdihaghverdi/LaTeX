@@ -38,17 +38,18 @@
 % Tags --------------------------------------------
 \newcommand{\mustread}{{\small\colourbox{red}{must-read}}}
 \newcommand{\betteread}{{\small\colourbox{Dandelion}{better-to-read}}}
+\newcommand{\laterread}{{\small\colourbox{DarkGray!70!}{later-to-read}}}
 
-\newcommand{\overonethpages}[1]{{\small\colourbox{DarkOrchid3!75!}{over-{#1}-pages}}}
-\newcommand{\overfivehpages}[1]{{\small\colourbox{DeepPink!85!}{over-{#1}-pages}}}
-\newcommand{\overtwofivepages}[1]{{\small\colourbox{DeepPink!55!}{under-{#1}-pages}}}
-\newcommand{\overonehpages}[1]{{\small\colourbox{DeepPink!25!}{under-{#1}-pages}}}
+\newcommand{\nearonethpages}{{\small\colourbox{DarkOrchid3!75!}{near-one-thousand-pages}}}
+\newcommand{\nearsevenhpages}{{\small\colourbox{DeepPink!85!}{near-seven-hundred-pages}}}
+\newcommand{\nearfivehpages}{{\small\colourbox{DeepPink!55!}{near-five-hundred-pages}}}
+\newcommand{\neartwohpages}{{\small\colourbox{Violet!60!}{near-two-hundred-pages}}}
 
-\newcommand{\priceoverfour}[1]{{\small\colourbox{Green3!85!}{{#1}}}}
-\newcommand{\priceoverthree}[1]{{\small\colourbox{Green3!55!}{{#1}}}}
-\newcommand{\priceovertwo}[1]{{\small\colourbox{Green3!35!}{{#1}}}}
-\newcommand{\priceoverone}[1]{{\small\colourbox{Green3!25!}{{#1}}}}
-\newcommand{\priceunderone}[1]{{\small\colourbox{Green3!15!}{{#1}}}}
+\newcommand{\pricenearfive}[1]{{\small\colourbox{Green3}{{#1}}}}
+\newcommand{\pricenearfour}[1]{{\small\colourbox{Green3!65!}{{#1}}}}
+\newcommand{\pricenearthree}[1]{{\small\colourbox{Green3!55!}{{#1}}}}
+\newcommand{\priceneartwo}[1]{{\small\colourbox{Green3!35!}{{#1}}}}
+\newcommand{\pricenearone}[1]{{\small\colourbox{Green3!15!}{{#1}}}}
 %--------------------------------------------------
 
 \begin{document}
@@ -111,8 +112,8 @@
 		
 			\begin{inparadesc}
 				\item \mustread
-				\item \overfivehpages{six-hundred}
-				\item \priceoverthree{297}
+				\item \nearsevenhpages
+				\item \pricenearfour{297}
 			\end{inparadesc}
 			\vspace{3mm}
 			
@@ -120,18 +121,18 @@
 			
 		\subsection{\href{https://skybooks.ir/products/Fluent-Python}{Fluent Python}}
 			\begin{inparadesc}
-				\item \betteread
-				\item \overonethpages{one-thousand}
-				\item \priceoverfour{505}
+				\item \laterread
+				\item \nearonethpages
+				\item \pricenearfive{505}
 			\end{inparadesc}
 			\vspace{3mm}
 			
 			I think it is the most complete Python book forever! It has nearly 1000. I love to read it but it may take a lot :(
 		\subsection{\href{https://skybooks.ir/products/Build-a-Career-in-Data-Science}{Build a Career in Data Science}}
 			\begin{inparadesc}
-				\item \betteread
-				\item \overtwofivepages{four-hundred}
-				\item \priceovertwo{194}
+				\item \laterread
+				\item \nearfivehpages
+				\item \pricenearthree{194}
 			\end{inparadesc}
 			\vspace{3mm}
 			
@@ -140,8 +141,8 @@
 		\subsection{\href{https://skybooks.ir/products/Inside-The-Python-Virtual-Machine}{Inside the Python Virtual Machine}}\label{ipvm}
 			\begin{inparadesc}
 				\item \betteread
-				\item \overonehpages{one-hundred}
-				\item \priceunderone{108}
+				\item \neartwohpages
+				\item \pricenearone{108}
 			\end{inparadesc}
 			\vspace{3mm}
 			
@@ -152,8 +153,8 @@
 		\subsection{\href{https://skybooks.ir/products/CPython-Internals}{CPython Internals}}		
 			\begin{inparadesc}
 				\item \betteread
-				\item \overtwofivepages{four-hundred}
-				\item \priceovertwo{209}
+				\item \nearfivehpages
+				\item \pricenearthree{209}
 			\end{inparadesc}
 			\vspace{3mm}
 			
