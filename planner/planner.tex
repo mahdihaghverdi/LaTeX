@@ -1,6 +1,7 @@
 \documentclass[12pt, dvipsnames, svgnames, x11names, oneside]{book}
 
 % Packages --------------------------------------------------
+\usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{dirtytalk}
 \usepackage{quotchap}
@@ -75,10 +76,20 @@
 		\includegraphics[width=8cm, height=10cm]{{#1}}
 	\end{center}
 }
+
+\newcommand{\roundpic}[4][]{
+	\tikz\node [circle, minimum width = #2,
+	path picture = {
+		\node [#1] at (path picture bounding box.center) {
+			\includegraphics[width=#3]{#4}};
+	}] {};}
 %------------------------------------------------------------
 
 % Title, author and date ------------------------------------
-\title{My Learning Plan}
+\title{\roundpic[xshift=-3mm,yshift=-5mm]{5.8cm}{9cm}{./images/lamp}\vspace{3mm}
+	
+	My Learning Plan
+}
 \author{Mahdi Haghverdi} 
 %------------------------------------------------------------
 
@@ -123,7 +134,9 @@
 	\clearpage
 	
 	\chapter{\textsf{Preface}}
-		
+	
+%	\roundpic[xshift=-3mm,yshift=-5mm]{5.8cm}{9cm}{./images/lamp}
+	
 	\para{After going up and down in my life, I finally found the way to study and learn well. This document has everything I want to do and resource I want to check. This plan will be started from the summer.}
 		
 	\para{After spending one whole semester in the university, it is got clear to me, that \underline{meanwhile} studying, learning \textbf{new}  things, is hard! It's possible but it's hard. So summers are the times which I have to value a lot and to make the most outta 'em.}
