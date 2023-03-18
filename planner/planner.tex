@@ -93,74 +93,23 @@
 \author{Mahdi Haghverdi} 
 %------------------------------------------------------------
 
-% Page borders ----------------------------------------------
-\usepackage{pgf}
-\usepackage{pgfpages}
-
-\pgfpagesdeclarelayout{boxed}
-{
-	\edef\pgfpageoptionborder{0pt}
-}
-{
-	\pgfpagesphysicalpageoptions
-	{%
-		logical pages=1,%
-	}
-	\pgfpageslogicalpageoptions{1}
-	{
-		border code=\pgfsetlinewidth{0.8pt}\pgfstroke,%
-		border shrink=\pgfpageoptionborder,%
-		resized width=.95\pgfphysicalwidth,%
-		resized height=.95\pgfphysicalheight,%
-		center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
-	}%
-}
-
-\pgfpagesuselayout{boxed}
-%------------------------------------------------------------
-
 % environments ----------------------------------------------
-\newenvironment{sansserif}
-{
-	\sffamily
-}{
-	\normalfont
-}
+\newenvironment{sansserif}{\sffamily}{\normalfont}
 %------------------------------------------------------------
+
 \begin{document}
 	\maketitle
 	\frontmatter
 	\tableofcontents
 	\clearpage
-	
-	\chapter{\textsf{Preface}}
-	
-%	\roundpic[xshift=-3mm,yshift=-5mm]{5.8cm}{9cm}{./images/lamp}
-	
-	\para{After going up and down in my life, I finally found the way to study and learn well. This document has everything I want to do and resource I want to check. This plan will be started from the summer.}
-		
-	\para{After spending one whole semester in the university, it is got clear to me, that \underline{meanwhile} studying, learning \textbf{new}  things, is hard! It's possible but it's hard. So summers are the times which I have to value a lot and to make the most outta 'em.}
-	
-	\para{At the time of writing this, there are 5 days remaining of the year, a long and hard year both for Iran, my love, and myself. I learned and grew a lot during this year. I spend a whole semester in university, experienced a really \textit{Randomly-Generated-but-Related} journey. Studied a lot, learned how to study well and meet many new and nice people.}
-	
-	
-	\para{But after all, I have to create a path to my actual career! After working and searching I've finally made my decision and chosen: \textit{Data Science}. I really like this field, it's very amazing but hard to learn :) Beside this, I wanna learn backend engineering as well, 'cause it is much faster (faster to get result, lol) and has a slightly smaller learning curve.}
-	
-	\para{This plan will be started from the summer of 1402, but I will be working and adding things to this document from time to time; there may be some new chapters or reorganization of the chapter but not now \textsf{:D}}
-	
-	\para{This will be a hot summer. It gets hot because of so many hours I want to study, both with video courses and with reading books. To learn data science I asked someone in our university who already is a data scientist, and he introduced me to the deep learning course of \textit{Jeremy Howard}. This course is freely available on YouTube. Also this course needs a book nearby (written by Jeremy Howard) called \textit{Deep Learning for Coders With Fastai and PyTorch}.}
-	
-	\para{Besides learning data science, learning new things and refreshing my Python skills is something that I would never miss and enjoy a lot. The focus of this summer will be on the CPython implementation itself, so I've chosen some nice books on this field. I have gathered some more general books on Python too, but they would have a lesser priority.}
-	
-	\para{Watching video courses and reading books are the main activities of the summer, but without spending or more precisely, \textit{acquiring} time to rest, nobody can learn anything; listening to music and podcast and watching movies are the main non-active and biking is the main physical activity of my summer.}
-	
+	\include{preface.tex}
 	\mainmatter		
 	
 	\begin{savequote}[80mm]
 		Some knowledge needs to be learned by video courses in short and then be completed by reading books and researching in a long journey.
 		\qauthor{Me}			
 	\end{savequote}
-	\include{courses.tex}
+	\include{courses.tex}	
 	
 	\begin{savequote}[80mm]
 		I find television very educating. Every time somebody turns on the set, I go into the other room and read a book.
@@ -169,7 +118,7 @@
 		There is more treasure in books than in all the pirate’s loot on Treasure Island.
 		\qauthor{Walt Disney}	
 	\end{savequote}
-	\include{books.tex}
+	\include{books.tex}	
 	
 	\begin{savequote}[80mm]
 		Replacing just a few key negative habits with a few positive habits can easily be the difference between being mostly unhappy and being happy almost all of the time.
