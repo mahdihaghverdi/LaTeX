@@ -1,6 +1,7 @@
 \documentclass[12pt, dvipsnames, svgnames, x11names, oneside]{book}
 
 % Packages --------------------------------------------------
+\usepackage{graphicx}
 \usepackage{dirtytalk}
 \usepackage{quotchap}
 \usepackage{epigraph} 
@@ -63,6 +64,13 @@
 \newcommand{\para}[1]{\noindent{#1}\newline}
 %------------------------------------------------------------
 
+% Including pictures ----------------------------------------
+\newcommand{\bookcover}[1]{
+	\begin{center}
+		\includegraphics[width=6cm, height=8cm]{{#1}}
+	\end{center}
+}
+%------------------------------------------------------------
 \begin{document}
 	\maketitle
 	\frontmatter
