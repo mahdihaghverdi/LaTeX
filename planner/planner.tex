@@ -6,8 +6,6 @@
 \usepackage{quotchap}
 \usepackage{epigraph} 
 \usepackage{paralist}
-\title{Summer plans \& works to do}
-\author{Mahdi Haghverdi} 
 %------------------------------------------------------------
 
 % URLs and hyperlinks ---------------------------------------
@@ -17,7 +15,7 @@
 	linkcolor=Navy,
 	filecolor=magenta,      
 	urlcolor=Navy,
-	pdftitle=Summer Plan,
+	pdftitle=Planner,
 }
 
 %------------------------------------------------------------
@@ -71,27 +69,68 @@
 	\end{center}
 }
 %------------------------------------------------------------
+
+% Title, author and date ------------------------------------
+\title{My Learning Plan}
+\author{Mahdi Haghverdi} 
+%------------------------------------------------------------
+
+% Page borders ----------------------------------------------
+\usepackage{pgf}
+\usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{boxed}
+{
+	\edef\pgfpageoptionborder{0pt}
+}
+{
+	\pgfpagesphysicalpageoptions
+	{%
+		logical pages=1,%
+	}
+	\pgfpageslogicalpageoptions{1}
+	{
+		border code=\pgfsetlinewidth{0.8pt}\pgfstroke,%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.95\pgfphysicalwidth,%
+		resized height=.95\pgfphysicalheight,%
+		center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+	}%
+}
+
+\pgfpagesuselayout{boxed}
+%------------------------------------------------------------
+
+% environments ----------------------------------------------
+\newenvironment{sansserif}
+{
+	\sffamily
+}{
+	\normalfont
+}
+%------------------------------------------------------------
 \begin{document}
 	\maketitle
 	\frontmatter
 	\tableofcontents
 	\clearpage
 	
-	\addcontentsline{toc}{chapter}{Preface}
-	\para{{\large \bf \sffamily Preface}}
-	
-	\para{Well summer, \textbf{the season of progress}. The season to learn new things and focus on what you really want and build your career.}
-	
-	\para{After spending one whole semester in the university, it is got clear to me, that \underline{meanwhile} studying, learning \textbf{new}  things, is hard! It's possible but it's hard. So summer is the time which I have to value a lot and to make the most of it.}
+	\chapter{\textsf{Preface}}
+		
+	\para{After going up and down in my life, I finally found the way to study and learn well. This document has everything I want to do and resource I want to check. This plan will be started from the summer.}
+		
+	\para{After spending one whole semester in the university, it is got clear to me, that \underline{meanwhile} studying, learning \textbf{new}  things, is hard! It's possible but it's hard. So summers are the times which I have to value a lot and to make the most outta 'em.}
 	
 	\para{At the time of writing this, there are 5 days remaining of the year, a long and hard year both for Iran, my love, and myself. I learned and grew a lot during this year. I spend a whole semester in university, experienced a really \textit{Randomly-Generated-but-Related} journey. Studied a lot, learned how to study well and meet many new and nice people.}
 	
 	
 	\para{But after all, I have to create a path to my actual career! After working and searching I've finally made my decision and chosen: \textit{Data Science}. I really like this field, it's very amazing but hard to learn :) Beside this, I wanna learn backend engineering as well, 'cause it is much faster (faster to get result, lol) and has a slightly smaller learning curve.}
 	
+	\para{This plan will be started from the summer of 1402, but I will be working and adding things to this document from time to time; there may be some new chapters or reorganization of the chapter but not now \textsf{:D}}
+	
 	\para{This will be a hot summer. It gets hot because of so many hours I want to study, both with video courses and with reading books. To learn data science I asked someone in our university who already is a data scientist, and he introduced me to the deep learning course of \textit{Jeremy Howard}. This course is freely available on YouTube. Also this course needs a book nearby (written by Jeremy Howard) called \textit{Deep Learning for Coders With Fastai and PyTorch}.}
 	
-	\para{Refreshing my Python skills is something that I would never miss and enjoy a lot. The focus of this summer will be on the CPython implementation itself, so I've chosen some nice books on this field. I have gathered some more general books on Python too, but they would have a lesser priority.}
+	\para{Besides learning data science, learning new things and refreshing my Python skills is something that I would never miss and enjoy a lot. The focus of this summer will be on the CPython implementation itself, so I've chosen some nice books on this field. I have gathered some more general books on Python too, but they would have a lesser priority.}
 	
 	\para{Watching video courses and reading books are the main activities of the summer, but without spending or more precisely, \textit{acquiring} time to rest, nobody can learn anything; listening to music and podcast and watching movies are the main non-active and biking is the main physical activity of my summer.}
 	
