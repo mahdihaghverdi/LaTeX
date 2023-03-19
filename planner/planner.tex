@@ -33,15 +33,17 @@
 	 		bottom=-1pt,
 	 		colframe=white,
 	 		colback={#1},  
+	 		size=small
 	]{#2}
 }
 %------------------------------------------------------------
 
 % Tags ------------------------------------------------------
-\newcommand{\mustread}{{\small\colourbox{red!85!}{\texttt{must-read}}}}
+\newcommand{\mustread}{{\small\colourbox{red!85!}{\texttt{must-be-read}}}}
 \newcommand{\betteread}{{\small\colourbox{Dandelion}{\texttt{better-to-read}}}}
 \newcommand{\laterread}{{\small\colourbox{DarkGray!70!}{\texttt{later-to-read}}}}
-\newcommand{\bookread}{{\small\normalfont\colourbox{Gold}{\texttt{Read}}}}
+\newcommand{\bookread}{{\small\normalfont\colourbox{Gold}{\texttt{read}}}}
+\newcommand{\printed}{{\small\normalfont\colourbox{DeepSkyBlue}{\texttt{printed}}}}
 
 \newcommand{\nearonethpages}{{\small\colourbox{DarkOrchid3!75!}{\texttt{near-one-thousand-pages}}}}
 \newcommand{\nearsevenhpages}{{\small\colourbox{DeepPink!85!}{\texttt{near-seven-hundred-pages}}}}
@@ -106,7 +108,7 @@
 	\mainmatter		
 	
 	\begin{savequote}[80mm]
-		Some knowledge needs to be learned by video courses in short and then be completed by reading books and researching in a long journey.
+		Some knowledge needs to be learned by video courses in a short, and then be completed by reading books and researching in a long journey.
 		\qauthor{Me}			
 	\end{savequote}
 	\include{courses.tex}	
