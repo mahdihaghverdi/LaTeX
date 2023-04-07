@@ -1,0 +1,49 @@
+\documentclass[12pt, oneside]{book}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{lipsum}
+
+\newcommand{\roundpic}[4][]{
+	\tikz\node [circle, minimum width = #2,
+	path picture = {
+		\node [#1] at (path picture bounding box.center) {
+			\includegraphics[width=#3]{#4}};
+	}] {};}
+
+\begin{document}
+	\pagestyle{empty}
+	\noindent\parbox[c]{.5\linewidth}{
+		\linespread{1.3}
+		\itshape Planning is bringing the future into the present so that you can do someting about it now - Winston Churchill  \par
+	}%
+	\parbox[c]{.5\linewidth}{
+		\hfill\roundpic[xshift=-3mm,yshift=-5mm]{5.8cm}{9cm}{./images/lamp}
+	}
+	
+	\centering
+	
+	\par\vspace{.15\textheight}
+	
+	{\Huge\textsc{My Learning Plan}\par}
+	\Large
+	
+	\par\vspace{.1\textheight}
+	
+	\medbreak
+    a written plan containing my past, present and mostly future.
+	\par\vspace{.08\textheight}
+	By
+	\medbreak
+	\textsc{Mahdi Haghverdi}
+	\bigbreak
+	Supervised by
+	\medbreak
+	some nice people: \textsc{My Friends}
+	
+	\vfill
+	
+	\noindent
+	\small 2023 \hfill 1402 
+	
+\end{document}
