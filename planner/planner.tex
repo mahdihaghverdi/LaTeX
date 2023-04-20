@@ -2,8 +2,7 @@
 
 % Packages --------------------------------------------------
 \usepackage{dirtytalk}
-\usepackage{quotchap}
-\usepackage{epigraph} 
+\usepackage{quotchap} 
 \usepackage{paralist}
 \usepackage{pdfpages}
 %------------------------------------------------------------
@@ -35,6 +34,11 @@
 	 		size=small
 	]{#2}
 }
+%------------------------------------------------------------
+
+% epigraphs envs --------------------------------------------
+\usepackage{epigraph}
+\newenvironment{epigraphcenter}[1]{\setlength{\epigraphwidth}{#1}\renewcommand{\epigraphflush}{center}}{}
 %------------------------------------------------------------
 
 % footnotes in headings -------------------------------------
@@ -92,18 +96,10 @@
 	}] {};}
 %------------------------------------------------------------
 
-% Title, author and date ------------------------------------
-\title{\roundpic[xshift=-3mm,yshift=-5mm]{5.8cm}{9cm}{./images/lamp}\vspace{3mm}
-	
-	My Learning Plan
-}
-\author{Mahdi Haghverdi} 
-%------------------------------------------------------------
-
 % environments ----------------------------------------------
 \newenvironment{sansserif}{\sffamily}{\normalfont}
 %------------------------------------------------------------
-
+\usepackage{lettrine}
 \begin{document}
 	\includepdf{butterflytitle}
 	\frontmatter
